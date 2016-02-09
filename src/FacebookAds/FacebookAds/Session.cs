@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Facebook;
-
 /// <summary>
 /// The MIT License (MIT)
 ///
@@ -31,95 +29,76 @@ using Facebook;
 /// </summary>
 namespace Searchresult.FacebookAds
 {
-    public class Api
+    public class Session
     {
         /// <summary>
-        /// The client
+        /// The application identifier
         /// </summary>
-        protected FacebookClient client;
+        protected string appId;
 
         /// <summary>
-        /// The session
+        /// The application secret
         /// </summary>
-        private Session session;
+        protected string appSecret;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Api" /> class.
+        /// The access token
         /// </summary>
-        /// <param name="client">The client.</param>
-        /// <param name="session">The session.</param>
-        public Api(FacebookClient client, Session session)
-        {
-            this.client = client;
-            this.session = session;
-        }
+        protected string accessToken;
 
         /// <summary>
-        /// Gets the client.
-        /// </summary>
-        /// <value>
-        /// The client.
-        /// </value>
-        public FacebookClient Client
-        {
-            get
-            {
-                return client;
-            }
-        }
-
-        /// <summary>
-        /// Gets the session.
-        /// </summary>
-        /// <value>
-        /// The session.
-        /// </value>
-        public Session Session
-        {
-            get
-            {
-                return session;
-            }
-        }
-
-
-        /// <summary>
-        /// The instance
-        /// </summary>
-        protected static Api instance;
-
-        /// <summary>
-        /// Gets or sets the instance.
-        /// </summary>
-        /// <value>
-        /// The instance.
-        /// </value>
-        public static Api Instance
-        {
-            get
-            {
-                return instance;
-            }
-
-            set
-            {
-                instance = value;
-            }
-        }
-
-        /// <summary>
-        /// Initializes the specified application identifier.
+        /// Initializes a new instance of the <see cref="Api"/> class.
         /// </summary>
         /// <param name="appId">The application identifier.</param>
         /// <param name="appSecret">The application secret.</param>
         /// <param name="accessToken">The access token.</param>
-        /// <returns>The initialized instance of Api</returns>
-        public static Api init(string appId, string appSecret, string accessToken)
+        public Session(string appId, string appSecret, string accessToken)
         {
-            Session session = new Session(appId, appSecret, accessToken);
-            Api instance = new Api(new FacebookClient(accessToken), session);
-            Instance = instance;
-            return instance;
+            this.appId = appId;
+            this.appSecret = appSecret;
+            this.accessToken = accessToken;
+        }
+
+        /// <summary>
+        /// Gets the application identifier.
+        /// </summary>
+        /// <value>
+        /// The application identifier.
+        /// </value>
+        public string AppId
+        {
+            get
+            {
+                return this.appId;
+            }
+        }
+
+        /// <summary>
+        /// Gets the application secret.
+        /// </summary>
+        /// <value>
+        /// The application secret.
+        /// </value>
+        public string AppSecret
+        {
+            get
+            {
+                return this.appSecret;
+            }
+        }
+
+        /// <summary>
+        /// Gets the access token.
+        /// </summary>
+        /// <value>
+        /// The access token.
+        /// </value>
+        public string AccessToken
+        {
+            get
+            {
+                return this.accessToken;
+            }
         }
     }
 }
