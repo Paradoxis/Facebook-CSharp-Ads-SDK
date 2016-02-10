@@ -41,15 +41,30 @@ namespace FacebookAdsTests
         /// Tests the ad user class.
         /// </summary>
         [TestMethod]
-        public void TestAdUser()
+        public void TestAdUserBusinesses()
         {
             Console.WriteLine("Initializing [FacebookAds.Object.AdUser]");
             AdUser user = new AdUser("me");
 
             Console.WriteLine("Calling [FacebookAds.Object.AdUser].GetAdAccounts()");
-            var result = user.GetAdAccounts();
+            var result_businesses = user.GetBusinesses();
             Console.Write("Result: ");
-            Console.WriteLine(result);
+            Console.WriteLine(result_businesses);
+        }
+
+        /// <summary>
+        /// Tests the ad user ad accounts.
+        /// </summary>
+        [TestMethod]
+        public void TestAdUserAdAccounts()
+        {
+            Console.WriteLine("Initializing [FacebookAds.Object.AdUser]");
+            AdUser user = new AdUser("me");
+
+            Console.WriteLine("Calling [FacebookAds.Object.AdUser].GetAdAccounts()");
+            var result_ad_accounts = user.GetAdAccounts();
+            Console.Write("Result: ");
+            Console.WriteLine(result_ad_accounts);
         }
 
         /// <summary>

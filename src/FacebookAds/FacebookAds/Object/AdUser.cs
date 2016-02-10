@@ -56,6 +56,17 @@ namespace FacebookAds.Object
         }
 
         /// <summary>
+        /// Gets all businesses related to this user.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns></returns>
+        public object GetBusinesses(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection(this.id + "/businesses", fields, parameters);
+        }
+
+        /// <summary>
         /// Gets the ad accounts related to a user.
         /// </summary>
         /// <param name="fields">The fields.</param>

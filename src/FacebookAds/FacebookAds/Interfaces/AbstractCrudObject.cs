@@ -79,7 +79,7 @@ namespace FacebookAds.Interfaces
             // Set the ID
             if (id != null) {
                 this.id = id;
-                data.Add(FIELD_ID, id);
+                // data.Add(FIELD_ID, id); // causing LOTS of conflicts with URL's
             }
 
             // Set the parent ID

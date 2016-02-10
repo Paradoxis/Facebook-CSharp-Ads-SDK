@@ -48,6 +48,7 @@
     <Compile Include="Interfaces\AbstractCrudObject.cs" />
     <Compile Include="Object\AdsPixel.cs" />
     <Compile Include="Object\AdUser.cs" />
+    <Compile Include="Object\Business.cs" />
     <Compile Include="Object\Campaign.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
