@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Facebook;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using Facebook;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -29,97 +28,83 @@ using Facebook;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-namespace Searchresult.FacebookAds
+namespace FacebookAds
 {
+    /// <summary>
+    /// Api class initializer
+    /// </summary>
     public class Api
     {
         /// <summary>
         /// The client
         /// </summary>
-        protected FacebookClient client;
+        protected static FacebookClient client = null;
 
         /// <summary>
-        /// The session
-        /// </summary>
-        private Session session;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Api" /> class.
-        /// </summary>
-        /// <param name="client">The client.</param>
-        /// <param name="session">The session.</param>
-        public Api(FacebookClient client, Session session)
-        {
-            this.client = client;
-            this.session = session;
-        }
-
-        /// <summary>
-        /// Gets the client.
+        /// Gets or sets the client.
         /// </summary>
         /// <value>
         /// The client.
         /// </value>
-        public FacebookClient Client
+        public static FacebookClient Client
         {
             get
             {
-                return client;
-            }
-        }
-
-        /// <summary>
-        /// Gets the session.
-        /// </summary>
-        /// <value>
-        /// The session.
-        /// </value>
-        public Session Session
-        {
-            get
-            {
-                return session;
-            }
-        }
-
-
-        /// <summary>
-        /// The instance
-        /// </summary>
-        protected static Api instance;
-
-        /// <summary>
-        /// Gets or sets the instance.
-        /// </summary>
-        /// <value>
-        /// The instance.
-        /// </value>
-        public static Api Instance
-        {
-            get
-            {
-                return instance;
+                return Api.client;
             }
 
             set
             {
-                instance = value;
+                Api.client = value;
             }
         }
 
         /// <summary>
-        /// Initializes the specified application identifier.
+        /// Initializes the application via pre-initialized clients
+        /// </summary>
+        /// <param name="client">The client.</param>
+        public static void Initialize(FacebookClient client)
+        {
+            Api.client = client;
+        }
+
+        /// <summary>
+        /// Initializes the application via tokens
         /// </summary>
         /// <param name="appId">The application identifier.</param>
         /// <param name="appSecret">The application secret.</param>
         /// <param name="accessToken">The access token.</param>
-        /// <returns>The initialized instance of Api</returns>
-        public static Api init(string appId, string appSecret, string accessToken)
+        public static void Initialize(string appId, string appSecret, string accessToken)
         {
-            Session session = new Session(appId, appSecret, accessToken);
-            Api instance = new Api(new FacebookClient(accessToken), session);
-            Instance = instance;
-            return instance;
+            Api.client = new FacebookClient(accessToken);
+            Api.client.AppId = appId;
+            Api.client.AppSecret = appSecret;
+            Api.client.AccessToken = accessToken;
         }
+
+        /// <summary>
+        /// Destroys the client object and resets the API
+        /// Might as well just re-initialize the object instead, but added for consistency.
+        /// </summary>
+        public static void Destroy()
+        {
+            Api.client = null;
+        }
+
+        /// <summary>
+        /// Checks if the class is initialized
+        /// </summary>
+        public static bool IsInitialized
+        {
+            get
+            {
+                return (Api.client != null);
+            }
+        }
+
+        /// <summary>
+        /// Prevents a default instance of the <see cref="Api"/> class from being created.
+        /// </summary>
+        private Api() { }
     }
 }

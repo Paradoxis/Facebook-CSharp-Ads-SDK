@@ -260,3 +260,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# Prevent sensitive data from being included in the commits
+# AppId, AppSecret and AccessTokens
+**/Properties/*[Ss]ettings*

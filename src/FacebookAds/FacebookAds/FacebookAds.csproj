@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2BCFAC71-941C-4469-A5F1-28A4F9BD1128}</ProjectGuid>
+    <ProjectGuid>{DA2AAA73-9BBC-4CB1-A8F5-1AF3DEECEB89}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Searchresult.FacebookAds</RootNamespace>
+    <RootNamespace>FacebookAds</RootNamespace>
     <AssemblyName>FacebookAds</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -45,11 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api.cs" />
-    <Compile Include="Object\AdUser.cs" />
+    <Compile Include="Interfaces\AbstractCrudObject.cs" />
+    <Compile Include="Object\AdsPixel.cs" />
+    <Compile Include="Object\Campaign.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Session.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

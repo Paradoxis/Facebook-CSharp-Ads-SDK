@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using Facebook;
+using FacebookAds;
+using FacebookAds.Object;
+using FacebookAds.Properties;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -27,10 +29,30 @@ using System.Threading.Tasks;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-namespace Searchresult.FacebookAds.Object
+namespace FacebookAdsTests
 {
-    public class AdUser
+    /// <summary>
+    /// Unit test class to test the campagin functionality
+    /// </summary>
+    [TestClass]
+    public class CampaignTest
     {
+        /// <summary>
+        /// Tests the get ad sets.
+        /// </summary>
+        [TestMethod]
+        public void TestCampaginGetAdSets()
+        {
+            Console.WriteLine("Initializing [FacebookAds.Object.Campaign]");
+            Campaign campaign = new Campaign("");
 
+            try {
+                Console.WriteLine("Calling [FacebookAds.Object.Campaign].GetAdSets()");
+                var result = campaign.GetAdSets();
+                Console.WriteLine("Result: {0}", result);
+            } catch(FacebookOAuthException e) {
+                Console.WriteLine("Caught OAuth Exception: {0}", e.Message);
+            }
+        }
     }
 }

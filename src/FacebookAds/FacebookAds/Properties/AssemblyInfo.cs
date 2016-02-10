@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("FacebookAds")]
-[assembly: AssemblyDescription("C# Facebook Marketing SDK")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Searchresult Performancemarketing")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("FacebookAds")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2bcfac71-941c-4469-a5f1-28a4f9bd1128")]
+[assembly: Guid("da2aaa73-9bbc-4cb1-a8f5-1af3deeceb89")]
 
 // Version information for an assembly consists of the following four values:
 //
