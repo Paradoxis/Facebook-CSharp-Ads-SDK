@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Facebook;
 using FacebookAds;
+using FacebookAds.Object;
 using FacebookAdsTests.Properties;
 
 /// <summary>
@@ -31,43 +32,42 @@ using FacebookAdsTests.Properties;
 namespace FacebookAdsTests
 {
     /// <summary>
-    /// Unit testing class to test the functionality of the main features of the library
+    /// Unit test class to test the campagin functionality
     /// </summary>
     [TestClass]
-    public class MainTest
+    public class ApiTest
     {
         /// <summary>
-        /// Mains the specified context.
+        /// Tests the ad user class.
         /// </summary>
-        /// <param name="context">The context.</param>
-        [AssemblyInitialize]
-        public static void main(TestContext context)
+        [TestMethod]
+        public void TestAdUser()
         {
-            Console.WriteLine("Starting unit test at {0}", DateTime.Now);
-            Console.WriteLine("Initializing [FacebookAds.Api]");
-            Api.Initialize(Settings.Default.AppId, Settings.Default.AppSecret, Settings.Default.AccessToken);
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("Initializing [FacebookAds.Object.AdUser]");
+            AdUser user = new AdUser("me");
+
+            Console.WriteLine("Calling [FacebookAds.Object.AdUser].GetAdAccounts()");
+            var result = user.GetAdAccounts();
+            Console.Write("Result: ");
+            Console.WriteLine(result);
         }
 
         /// <summary>
-        /// Tests the API.
+        /// Tests the campaign class.
         /// </summary>
         [TestMethod]
-        public void TestApi()
+        public void TestCampagin()
         {
-            Console.WriteLine("Current [FacebookAds.Api].IsInitialized value: {0}", Api.IsInitialized);
-            Console.WriteLine("Calling [FacebookAds.Api].Destroy()");
-            Api.Destroy();
-            Console.WriteLine("Destroyed [FacebookAds.Api] with result: {0}", Api.IsInitialized);
-        }
+            Console.WriteLine("Initializing [FacebookAds.Object.Campaign]");
+            Campaign campaign = new Campaign("");
 
-        [TestMethod]
-        public void TestFacebookConnectivity()
-        {
-            Console.WriteLine("Calling [Facebook.FacebookClient].Get()");
-            var result = Api.Client.Get("me");
-            Console.Write("Result: ");
-            Console.WriteLine(result);
+            try {
+                Console.WriteLine("Calling [FacebookAds.Object.Campaign].GetAdSets()");
+                var result = campaign.GetAdSets();
+                Console.WriteLine("Result: {0}", result);
+            } catch(FacebookOAuthException e) {
+                Console.WriteLine("Caught OAuth Exception: {0}", e.Message);
+            }
         }
     }
 }

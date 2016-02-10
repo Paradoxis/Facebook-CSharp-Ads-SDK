@@ -1,10 +1,10 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-using Facebook;
-using FacebookAds;
-using FacebookAds.Object;
-using FacebookAds.Properties;
+using FacebookAds.Interfaces;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -29,30 +29,41 @@ using FacebookAds.Properties;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-namespace FacebookAdsTests
+namespace FacebookAds.Object
 {
     /// <summary>
-    /// Unit test class to test the campagin functionality
+    /// Allows for AdUser functionality via simple to use methods
     /// </summary>
-    [TestClass]
-    public class CampaignTest
+    /// <seealso cref="FacebookAds.Interfaces.AbstractCrudObject" />
+    public class AdUser : AbstractCrudObject
     {
-        /// <summary>
-        /// Tests the get ad sets.
-        /// </summary>
-        [TestMethod]
-        public void TestCampaginGetAdSets()
-        {
-            Console.WriteLine("Initializing [FacebookAds.Object.Campaign]");
-            Campaign campaign = new Campaign("");
 
-            try {
-                Console.WriteLine("Calling [FacebookAds.Object.Campaign].GetAdSets()");
-                var result = campaign.GetAdSets();
-                Console.WriteLine("Result: {0}", result);
-            } catch(FacebookOAuthException e) {
-                Console.WriteLine("Caught OAuth Exception: {0}", e.Message);
-            }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdUser"/> class.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        public AdUser(string id) : base(id) { }
+
+        /// <summary>
+        /// Gets the endpoint of the API call.
+        /// </summary>
+        /// <returns>
+        /// Endpoint URL
+        /// </returns>
+        protected override string GetEndpoint()
+        {
+            return "users";
+        }
+
+        /// <summary>
+        /// Gets the ad accounts related to a user.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns></returns>
+        public object GetAdAccounts(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("act_"+ this.id +"/users", fields, parameters);
         }
     }
 }

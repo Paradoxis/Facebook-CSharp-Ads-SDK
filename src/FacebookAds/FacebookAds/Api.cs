@@ -36,6 +36,11 @@ namespace FacebookAds
     public class Api
     {
         /// <summary>
+        /// The version of the graph API we're using
+        /// </summary>
+        public const string VERSION = "v2.5";
+
+        /// <summary>
         /// The client
         /// </summary>
         protected static FacebookClient client = null;
@@ -80,6 +85,7 @@ namespace FacebookAds
             Api.client.AppId = appId;
             Api.client.AppSecret = appSecret;
             Api.client.AccessToken = accessToken;
+            Api.client.Version = Api.VERSION;
         }
 
         /// <summary>

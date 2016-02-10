@@ -159,6 +159,17 @@ namespace FacebookAds.Interfaces
         }
 
         /// <summary>
+        /// Gets many objects by connection without a specified endpoint
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns></returns>
+        protected object getManyByConnection(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return Client.Get(this.assureEndpoint(), this.assureData(fields, parameters));
+        }
+
+        /// <summary>
         /// Gets many objects by connection.
         /// </summary>
         /// <param name="endpoint">The endpoint.</param>
