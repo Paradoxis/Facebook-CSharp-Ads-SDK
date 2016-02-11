@@ -79,7 +79,7 @@ namespace FacebookAds.Interfaces
             // Set the ID
             if (id != null) {
                 this.id = id;
-                // data.Add(FIELD_ID, id); // causing LOTS of conflicts with URL's
+                data.Add(FIELD_ID, id); // causing LOTS of conflicts with URL's
             }
 
             // Set the parent ID
@@ -126,12 +126,22 @@ namespace FacebookAds.Interfaces
 
                 // Endpoint still empty?
                 if (endpoint == null || endpoint == "") {
-                    throw new FacebookApiException("Enpoint must be provided via a parameter or GetEndpoint()");
+                    throw new FacebookApiException("Endpoint must be provided via a parameter or GetEndpoint()");
                 } else {
                     return endpoint;
                 }
             } else {
                 return endpoint;
+            }
+        }
+
+        private string assureEndpoint(Type reference)
+        {
+            if (reference == null) {
+                throw new FacebookApiException("Endpoint reference type must be provided via a parameter");
+            } else {
+                AbstractCrudObject obj = (AbstractCrudObject) Activator.CreateInstance(reference, id);
+                return obj.GetEndpoint();
             }
         }
 
@@ -164,9 +174,9 @@ namespace FacebookAds.Interfaces
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns></returns>
-        protected object getManyByConnection(string[] fields = null, Dictionary<string, object> parameters = null)
+        protected object getManyByConnection(Type reference, string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return Client.Get(this.assureEndpoint(), this.assureData(fields, parameters));
+            return Client.Get(this.assureEndpoint(reference), this.assureData(fields, parameters));
         }
 
         /// <summary>
@@ -184,14 +194,24 @@ namespace FacebookAds.Interfaces
         }
 
         /// <summary>
+        /// Gets the many by connection asynchronous.
+        /// </summary>
+        /// <param name="reference">The reference.</param>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>Result of Client.GetTaskAsync</returns>
+        protected object getManyByConnectionAsync(Type reference, string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return Client.GetTaskAsync(this.assureEndpoint(reference), this.assureData(fields, parameters));
+        }
+
+        /// <summary>
         /// Gets many objects by connection asynchronously.
         /// </summary>
         /// <param name="endpoint">The endpoint.</param>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns>
-        /// Result of Client.GetTaskAsync
-        /// </returns>
+        /// <returns>Result of Client.GetTaskAsync</returns>
         protected object getManyByConnectionAsync(string endpoint, string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return Client.GetTaskAsync(this.assureEndpoint(endpoint), this.assureData(fields, parameters));

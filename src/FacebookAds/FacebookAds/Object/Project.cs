@@ -39,7 +39,7 @@ using FacebookAds.Interfaces;
 /// </remarks>
 namespace FacebookAds.Object
 {
-    public class AdUser : AbstractCrudObject
+    public class Project : AbstractCrudObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AdAccount"/> class.
@@ -47,26 +47,26 @@ namespace FacebookAds.Object
         /// <param name="id">The identifier.</param>
         /// <param name="parentId">The parent identifier.</param>
         /// <param name="client">The client.</param>
-        public AdUser(string id, string parentId = null, FacebookClient client = null) : base(id, parentId, client) { }
+        public Project(string id, string parentId = null, FacebookClient client = null) : base(id, parentId, client) { }
 
         /// <summary>Gets the endpoint of the API call.</summary>
         /// <returns>Endpoint URL</returns>
         protected override string GetEndpoint()
         {
-            return "users";
+            return "businessprojects";
         }
-
+        
         /// <summary>
-        /// Gets all businesses related to this user (custom feature).
+        /// Gets the pages.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        public object GetBusinesses(string[] fields = null, Dictionary<string, object> parameters = null)
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetPages(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection("businesses", fields, parameters);
+            return this.getManyByConnection(typeof(Page), fields, parameters);
         }
-
+                
         /// <summary>
         /// Gets the ad accounts.
         /// </summary>
@@ -79,14 +79,14 @@ namespace FacebookAds.Object
         }
                 
         /// <summary>
-        /// Gets the ad account groups.
+        /// Gets the apps.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetAdAccountGroups(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetApps(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(AdAccountGroup), fields, parameters);
+            return this.getManyByConnection("apps", fields, parameters);
         }
                 
     }

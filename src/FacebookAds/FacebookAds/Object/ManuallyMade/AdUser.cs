@@ -1,10 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Facebook;
 using FacebookAds.Interfaces;
 
 /// <summary>
@@ -30,34 +29,34 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-11 16:21:49</date>
-/// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
-///
-/// <remarks>
-/// This file was automatically generated using the Facebook Ads
-/// PHP SDK to C# converter found in this library under /src/SdkConverter
-/// </remarks>
 namespace FacebookAds.Object
 {
+    /// <summary>
+    /// Allows for AdUser functionality via simple to use methods
+    /// </summary>
+    /// <seealso cref="FacebookAds.Interfaces.AbstractCrudObject" />
     public class AdUser : AbstractCrudObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="AdAccount"/> class.
+        /// Initializes a new instance of the <see cref="AdUser"/> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <param name="parentId">The parent identifier.</param>
-        /// <param name="client">The client.</param>
-        public AdUser(string id, string parentId = null, FacebookClient client = null) : base(id, parentId, client) { }
+        public AdUser(string id) : base(id) { }
 
-        /// <summary>Gets the endpoint of the API call.</summary>
-        /// <returns>Endpoint URL</returns>
+        /// <summary>
+        /// Gets the endpoint of the API call.
+        /// </summary>
+        /// <returns>
+        /// Endpoint URL
+        /// </returns>
         protected override string GetEndpoint()
         {
             return "users";
         }
 
         /// <summary>
-        /// Gets all businesses related to this user (custom feature).
+        /// Gets all businesses related to this user.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
@@ -68,28 +67,25 @@ namespace FacebookAds.Object
         }
 
         /// <summary>
-        /// Gets the ad accounts.
+        /// Gets the ad accounts related to a user.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        /// <returns></returns>
         public object GetAdAccounts(string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return this.getManyByConnection(typeof(AdAccount), fields, parameters);
         }
-                
+
         /// <summary>
         /// Gets the ad account groups.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        /// <returns></returns>
         public object GetAdAccountGroups(string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return this.getManyByConnection(typeof(AdAccountGroup), fields, parameters);
         }
-                
     }
 }
-
-

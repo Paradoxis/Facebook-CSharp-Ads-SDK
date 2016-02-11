@@ -1,10 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Facebook;
-using FacebookAds;
-using FacebookAds.Object;
-using FacebookAdsTests.Properties;
+﻿using FacebookAds.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -29,18 +28,31 @@ using FacebookAdsTests.Properties;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-namespace FacebookAdsTests
+namespace FacebookAds.Object
 {
     /// <summary>
-    /// Unit test class to test the campagin functionality
+    /// 
     /// </summary>
-    [TestClass]
-    public class ApiTest
+    /// <seealso cref="FacebookAds.Interfaces.AbstractCrudObject" />
+    public class AdSet : AbstractCrudObject
     {
-        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdSet"/> class.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        public AdSet(string id) : base(id)
+        {
+        }
 
-        
-
-        
+        /// <summary>
+        /// Gets the endpoint of the API call.
+        /// </summary>
+        /// <returns>
+        /// Endpoint URL
+        /// </returns>
+        protected override string GetEndpoint()
+        {
+            return "adsets";
+        }
     }
 }

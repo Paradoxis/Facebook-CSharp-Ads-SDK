@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Facebook;
 using FacebookAds.Interfaces;
 
 /// <summary>
@@ -29,62 +30,66 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
+/// <date>2016-02-11 16:21:49</date>
+/// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
+///
+/// <remarks>
+/// This file was automatically generated using the Facebook Ads
+/// PHP SDK to C# converter found in this library under /src/SdkConverter
+/// </remarks>
 namespace FacebookAds.Object
 {
-    /// <summary>
-    /// Allows for AdPixels functionality via simple to use methods
-    /// </summary>
-    /// <seealso cref="FacebookAds.Interfaces.AbstractCrudObject" />
     public class AdsPixel : AbstractCrudObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AdsPixel"/> class.
+        /// Initializes a new instance of the <see cref="AdAccount"/> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        public AdsPixel(string id) : base(id) { }
+        /// <param name="parentId">The parent identifier.</param>
+        /// <param name="client">The client.</param>
+        public AdsPixel(string id, string parentId = null, FacebookClient client = null) : base(id, parentId, client) { }
 
-        /// <summary>
-        /// Gets the endpoint of the API call.
-        /// </summary>
-        /// <returns>
-        /// Endpoint URL
-        /// </returns>
+        /// <summary>Gets the endpoint of the API call.</summary>
+        /// <returns>Endpoint URL</returns>
         protected override string GetEndpoint()
         {
             return "adspixels";
         }
-
+        
         /// <summary>
         /// Gets the ad accounts.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        public object getAdAccounts(string[] fields = null, Dictionary<string, object> parameters = null)
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetAdAccounts(string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return this.getManyByConnection("shared_accounts", fields, parameters);
         }
-
+                
         /// <summary>
         /// Gets the agencies.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        public object getAgencies(string[] fields = null, Dictionary<string, object> parameters = null)
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetAgencies(string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return this.getManyByConnection("shared_agencies", fields, parameters);
         }
-
+                
         /// <summary>
         /// Gets the stats.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        public object getStats(string[] fields = null, Dictionary<string, object> parameters = null)
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetStats(string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return this.getManyByConnection("stats", fields, parameters);
         }
+                
     }
 }
+
+

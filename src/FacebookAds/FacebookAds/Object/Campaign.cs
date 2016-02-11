@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Facebook;
 using FacebookAds.Interfaces;
 
 /// <summary>
@@ -29,75 +30,77 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
+/// <date>2016-02-11 16:21:49</date>
+/// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
+///
+/// <remarks>
+/// This file was automatically generated using the Facebook Ads
+/// PHP SDK to C# converter found in this library under /src/SdkConverter
+/// </remarks>
 namespace FacebookAds.Object
 {
-    /// <summary>
-    /// Allows for Ad Campagin functionality via simple to use methods
-    /// </summary>
-    /// <seealso cref="FacebookAds.Interfaces.AbstractCrudObject" />
     public class Campaign : AbstractCrudObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Campaign"/> class.
+        /// Initializes a new instance of the <see cref="AdAccount"/> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        public Campaign(string id) : base(id) { }
+        /// <param name="parentId">The parent identifier.</param>
+        /// <param name="client">The client.</param>
+        public Campaign(string id, string parentId = null, FacebookClient client = null) : base(id, parentId, client) { }
 
-        /// <summary>
-        /// Gets the endpoint of the API call.
-        /// </summary>
-        /// <returns>string</returns>
+        /// <summary>Gets the endpoint of the API call.</summary>
+        /// <returns>Endpoint URL</returns>
         protected override string GetEndpoint()
         {
             return "campaigns";
         }
-
+        
         /// <summary>
         /// Gets the ad sets.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
         public object GetAdSets(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(this.id + "/adsets", fields, parameters);
+            return this.getManyByConnection(typeof(AdSet), fields, parameters);
         }
-
+                
         /// <summary>
         /// Gets the ads.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
         public object GetAds(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(this.id + "/ads", fields, parameters);
+            return this.getManyByConnection(typeof(Ad), fields, parameters);
         }
-
+                
         /// <summary>
         /// Gets the insights.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
         public object GetInsights(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(this.id + "/insights", fields, parameters);
+            return this.getManyByConnection("insights", fields, parameters);
         }
-
+                
         /// <summary>
         /// Gets the insights asynchronously.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
         public object GetInsightsAsync(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnectionAsync(this.id + "/insights", fields, parameters);
+            return this.getManyByConnectionAsync(typeof(AsyncJobInsights), fields, parameters);
         }
+                
     }
 }
+
+

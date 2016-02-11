@@ -39,7 +39,7 @@ using FacebookAds.Interfaces;
 /// </remarks>
 namespace FacebookAds.Object
 {
-    public class AdUser : AbstractCrudObject
+    public class ProductCatalog : AbstractCrudObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AdAccount"/> class.
@@ -47,47 +47,54 @@ namespace FacebookAds.Object
         /// <param name="id">The identifier.</param>
         /// <param name="parentId">The parent identifier.</param>
         /// <param name="client">The client.</param>
-        public AdUser(string id, string parentId = null, FacebookClient client = null) : base(id, parentId, client) { }
+        public ProductCatalog(string id, string parentId = null, FacebookClient client = null) : base(id, parentId, client) { }
 
         /// <summary>Gets the endpoint of the API call.</summary>
         /// <returns>Endpoint URL</returns>
         protected override string GetEndpoint()
         {
-            return "users";
+            return "product_catalogs";
         }
-
+        
         /// <summary>
-        /// Gets all businesses related to this user (custom feature).
-        /// </summary>
-        /// <param name="fields">The fields.</param>
-        /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        public object GetBusinesses(string[] fields = null, Dictionary<string, object> parameters = null)
-        {
-            return this.getManyByConnection("businesses", fields, parameters);
-        }
-
-        /// <summary>
-        /// Gets the ad accounts.
+        /// Gets the products.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetAdAccounts(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetProducts(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(AdAccount), fields, parameters);
+            return this.getManyByConnection(typeof(Product), fields, parameters);
         }
                 
         /// <summary>
-        /// Gets the ad account groups.
+        /// Gets the product sets.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetAdAccountGroups(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetProductSets(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(AdAccountGroup), fields, parameters);
+            return this.getManyByConnection(typeof(ProductSet), fields, parameters);
         }
+                
+        /// <summary>
+        /// Gets the product feeds.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetProductFeeds(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection(typeof(ProductFeed), fields, parameters);
+        }
+                
+        /// <summary>
+        /// Gets the external event sources.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
                 
     }
 }
