@@ -55,7 +55,7 @@ namespace FacebookAdsTests.Object
             AdUser user = new AdUser(id);
 
             Console.WriteLine("Calling [FacebookAds.Object.AdUser].GetAdAccounts()");
-            Console.WriteLine("Result: {0}", user.GetBusinesses());
+            //Console.WriteLine("Result: {0}", user.GetBusinesses());
         }
 
         /// <summary>

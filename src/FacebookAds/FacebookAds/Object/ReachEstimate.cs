@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 10:51:46</date>
+/// <date>2016-02-12 11:11:07</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -43,7 +43,7 @@ namespace FacebookAds.Object
     public class ReachEstimate : AbstractCrudObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AdAccount"/> class.
+        /// Initializes a new instance of the <see cref="ReachEstimate"/> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="parentId">The parent identifier.</param>
