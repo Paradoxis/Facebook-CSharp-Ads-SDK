@@ -160,6 +160,7 @@ class Converter
     private function compileFile(AbstractClassReader $class)
     {
         // Start output buffering and include the template class
+        $start = microtime(true);
         ob_start();
         include($class->getTemplateLocation());
 
@@ -178,5 +179,13 @@ class Converter
 
         // Display that the class has been created
         echo "File saved to: {$class->getOutputFileLocation()} \n";
+
+        // Display debug information per class
+        if (__DEBUG__) {
+            echo "\t| Class type:\t\t\\"    . $class::className() . "\n";
+            echo "\t| Class namespace:\t" . $class->getClassNamespace() . "\n";
+            echo "\t| Duration:\t\t\t"    . $duration = (microtime(true) - $start) . " seconds\n";
+            echo "\n";
+        }
     }
 }

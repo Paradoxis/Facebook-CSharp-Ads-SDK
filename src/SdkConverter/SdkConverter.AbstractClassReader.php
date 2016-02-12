@@ -107,6 +107,15 @@ abstract class AbstractClassReader
     }
 
     /**
+     * Gets the class name assigned to the module
+     * @return string
+     */
+    public function getClassNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
      * Gets the filename of the class assigned to the module
      * @return string
      */
