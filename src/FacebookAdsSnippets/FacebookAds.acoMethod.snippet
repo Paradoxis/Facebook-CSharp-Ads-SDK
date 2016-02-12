@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>AbstractCrudObject API method</Title>
+            <Author>Luke Paris (Paradoxis) luke@paradoxis.nl</Author>
+            <Description>Prints out a template for an AbstractCrudObject method used in FacebookAds API calls</Description>
+            <Shortcut>FacebookAds_acoMethod</Shortcut>
+        </Header>
+        <Snippet>
+          <Declarations>
+            <Literal>
+              <ID>MethodName</ID>
+              <ToolTip>Replace with the method name.</ToolTip>
+              <Default>methodName</Default>
+            </Literal>
+            <Literal>
+              <ID>EndPoint</ID>
+              <ToolTip>Replace with the API endpoint.</ToolTip>
+              <Default>"endpoint_name"</Default>
+            </Literal>
+          </Declarations>
+            <Code Language="CSharp">
+<![CDATA[
+public object $MethodName$(string[] fields = null, Dictionary<string, object> parameters = null)
+{
+    return this.getManyByConnection($EndPoint$, fields, parameters);
+}
+]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

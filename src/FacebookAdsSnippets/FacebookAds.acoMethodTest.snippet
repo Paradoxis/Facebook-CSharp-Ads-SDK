@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>AbstractCrudObject API unit test method</Title>
+            <Author>Luke Paris (Paradoxis) luke@paradoxis.nl</Author>
+            <Description>Prints out a template for an AbstractCrudObject method used in FacebookAds API calls</Description>
+            <Shortcut>FacebookAds_acoMethodTest</Shortcut>
+        </Header>
+        <Snippet>
+          <Declarations>
+            <Literal>
+              <ID>ClassName</ID>
+              <ToolTip>Replace with the class name.</ToolTip>
+              <Function>ClassName()</Function>
+              <Default>ClassName</Default>
+            </Literal>
+            <Literal>
+              <ID>MethodName</ID>
+              <ToolTip>Replace with the method name.</ToolTip>
+              <Default>methodName</Default>
+            </Literal>
+          </Declarations>
+            <Code Language="CSharp">
+<![CDATA[
+[TestMethod]
+public void $ClassName$$MethodName$Test()
+{
+    Console.WriteLine("Initializing [FacebookAds.Object.$ClassName$]");
+    $ClassName$ user = new $ClassName$(id);
+
+    Console.WriteLine("Calling [FacebookAds.Object.$ClassName$].$MethodName$()");
+    Console.WriteLine("Result: {0}", user.$MethodName$());
+}
+]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

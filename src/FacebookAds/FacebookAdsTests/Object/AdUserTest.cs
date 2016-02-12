@@ -71,7 +71,9 @@ namespace FacebookAdsTests.Object
             Console.WriteLine("Result: {0}", user.GetAdAccounts());
         }
 
-
+        /// <summary>
+        /// Ads the user get ad account groups test.
+        /// </summary>
         [TestMethod]
         public void AdUserGetAdAccountGroupsTest()
         {
@@ -81,6 +83,5 @@ namespace FacebookAdsTests.Object
             Console.WriteLine("Calling [FacebookAds.Object.AdUser].GetAdAccountGroups()");
             Console.WriteLine("Result: {0}", user.GetAdAccountGroups());
         }
-
     }
 }
