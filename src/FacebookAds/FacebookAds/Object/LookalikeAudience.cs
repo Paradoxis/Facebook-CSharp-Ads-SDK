@@ -30,12 +30,13 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-11 16:21:49</date>
+/// <date>2016-02-12 10:51:46</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
 /// This file was automatically generated using the Facebook Ads
-/// PHP SDK to C# converter found in this library under /src/SdkConverter
+/// PHP SDK to C# converter found in this library under '/src/SdkConverter/'
+/// For more information please refer to the official documentation
 /// </remarks>
 namespace FacebookAds.Object
 {

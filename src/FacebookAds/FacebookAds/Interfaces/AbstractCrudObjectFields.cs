@@ -29,7 +29,7 @@ using System.Threading.Tasks;
 /// </summary>
 namespace FacebookAds.Interfaces
 {
-    abstract class AbstractCrudObjectFields
+    public abstract class AbstractCrudObjectFields
     {
         const string CONFIGURED_STATUS = "configured_status";
         const string EFFECTIVE_STATUS = "effective_status";

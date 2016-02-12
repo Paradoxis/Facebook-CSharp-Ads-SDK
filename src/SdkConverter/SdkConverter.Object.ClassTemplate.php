@@ -1,8 +1,8 @@
 <?php
 /** Variable declarations for PhpStorm */
 /** @var \SdkConverter\Object\ClassReader $class */
-require("SdkConverter.ClassTemplateHeader.php");
-?>
+require("SdkConverter.ClassTemplateHeader.php"); ?>
+
 namespace FacebookAds.Object
 {
     public class <?= $class->getClassName(); ?> : AbstractCrudObject

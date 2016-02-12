@@ -1,9 +1,9 @@
 <?php
 /** Variable declarations for PhpStorm */
 /** @var \SdkConverter\Fields\ClassReader $class */
-require("SdkConverter.ClassTemplateHeader.php");
-?>
-namespace FacebookAds.Object
+require("SdkConverter.ClassTemplateHeader.php"); ?>
+
+namespace FacebookAds.Object.Fields
 {
     public class <?= $class->getClassName(); ?> : AbstractCrudObjectFields
     {

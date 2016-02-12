@@ -30,12 +30,13 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-11 16:21:49</date>
+/// <date>2016-02-12 10:51:45</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
 /// This file was automatically generated using the Facebook Ads
-/// PHP SDK to C# converter found in this library under /src/SdkConverter
+/// PHP SDK to C# converter found in this library under '/src/SdkConverter/'
+/// For more information please refer to the official documentation
 /// </remarks>
 namespace FacebookAds.Object
 {
@@ -55,18 +56,7 @@ namespace FacebookAds.Object
         {
             return "users";
         }
-
-        /// <summary>
-        /// Gets all businesses related to this user (custom feature).
-        /// </summary>
-        /// <param name="fields">The fields.</param>
-        /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
-        public object GetBusinesses(string[] fields = null, Dictionary<string, object> parameters = null)
-        {
-            return this.getManyByConnection("businesses", fields, parameters);
-        }
-
+        
         /// <summary>
         /// Gets the ad accounts.
         /// </summary>
