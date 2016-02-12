@@ -135,12 +135,18 @@ namespace FacebookAds.Interfaces
             }
         }
 
+        /// <summary>
+        /// Assures that the endpoint string is valid via a Type reference.
+        /// </summary>
+        /// <param name="reference">The reference.</param>
+        /// <returns></returns>
+        /// <exception cref="FacebookApiException">Endpoint reference type must be provided via a parameter</exception>
         private string assureEndpoint(Type reference)
         {
             if (reference == null) {
                 throw new FacebookApiException("Endpoint reference type must be provided via a parameter");
             } else {
-                AbstractCrudObject obj = (AbstractCrudObject) Activator.CreateInstance(reference, id);
+                AbstractCrudObject obj = (AbstractCrudObject) Activator.CreateInstance(reference, new object[] { id, parentId, Client });
                 return obj.GetEndpoint();
             }
         }

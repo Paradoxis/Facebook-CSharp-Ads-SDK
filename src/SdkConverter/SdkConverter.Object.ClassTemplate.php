@@ -8,7 +8,7 @@ namespace FacebookAds.Object
     public class <?= $class->getClassName(); ?> : AbstractCrudObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AdAccount"/> class.
+        /// Initializes a new instance of the <see cref="<?= $class->getClassName(); ?>"/> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="parentId">The parent identifier.</param>
