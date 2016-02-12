@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Check if the application has been initialized
+ */
+if (defined("__SDK_CONVERTER__") == false) exit("Application not initialized");
+
 /** Variable declarations for PhpStorm */
 /** @var \SdkConverter\Fields\ClassReader $class */
 require("SdkConverter.ClassTemplateHeader.php"); ?>

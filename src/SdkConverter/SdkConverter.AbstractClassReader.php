@@ -7,6 +7,11 @@
 namespace SdkConverter;
 
 /**
+ * Check if the application has been initialized
+ */
+if (defined("__SDK_CONVERTER__") == false) exit("Application not initialized");
+
+/**
  * Use classes
  */
 use \ReflectionClass;

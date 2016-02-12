@@ -12,7 +12,7 @@
  */
 
 // Define our converter constant to prevent bugs
-define("__CONVERTER__", true);
+define("__SDK_CONVERTER__", true);
 define("__DEBUG__", false);
 
 // Include Facebook autoloader and API class
