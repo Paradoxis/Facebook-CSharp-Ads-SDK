@@ -8,7 +8,7 @@ This Ads API SDK is built to facilitate application development for [Facebook Ad
 
 1. Open the code in a visual studio project and add the unofficial [Facebook C-Sharp SDK](https://github.com/facebook-csharp-sdk/facebook-csharp-sdk) library by going to *FacebookAds->References->Manage NuGet Packages*
 2. Look for *Facebook* and press *Install*
-3. Open your project and import the main class and use the `static void FacebookAds.Api.Init(appId, appSecret, accessToken)` method to initialize the library for use.
+3. Open your project and import the main class and use the `static void FacebookAds.Api.Initialize(appId, appSecret, accessToken)` method to initialize the library for use.
 
 **PHP SdkConverter**
 
