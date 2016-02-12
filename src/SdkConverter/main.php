@@ -13,7 +13,7 @@
 
 // Define our converter constant to prevent bugs
 define("__SDK_CONVERTER__", true);
-define("__DEBUG__", true);
+define("__DEBUG__", false);
 
 // Include Facebook autoloader and API class
 // Download these from the official Facebook Ads SDK page
