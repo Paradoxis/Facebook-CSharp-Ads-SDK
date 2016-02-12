@@ -31,8 +31,8 @@ class Converter
      * The class directories we want to read from
      * @var string
      */
-    const INPUT_DIR_OBJECT = "/../../lib/FacebookAds/Object/";
-    const INPUT_DIR_FIELDS = "/../../lib/FacebookAds/Object/Fields/";
+    const INPUT_DIR_OBJECT = "/../../../lib/FacebookAds/Object/";
+    const INPUT_DIR_FIELDS = "/../../../lib/FacebookAds/Object/Fields/";
 
     /**
      * Output directories where we want our classes to go

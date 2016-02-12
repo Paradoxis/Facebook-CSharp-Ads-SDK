@@ -7,7 +7,7 @@ if (defined("__SDK_CONVERTER__") == false) exit("Application not initialized");
 
 /** Variable declarations for PhpStorm */
 /** @var \SdkConverter\Object\ClassReader $class */
-require("SdkConverter.ClassTemplateHeader.php"); ?>
+require("FacebookAds.Header.php"); ?>
 
 namespace FacebookAds.Object
 {

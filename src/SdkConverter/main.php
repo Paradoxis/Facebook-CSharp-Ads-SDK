@@ -13,7 +13,7 @@
 
 // Define our converter constant to prevent bugs
 define("__SDK_CONVERTER__", true);
-define("__DEBUG__", false);
+define("__DEBUG__", true);
 
 // Include Facebook autoloader and API class
 // Download these from the official Facebook Ads SDK page
@@ -22,11 +22,11 @@ require_once(__DIR__."/../../lib/FacebookAds/Api.php");
 require_once(__DIR__."/../../lib/FacebookAds/autoload.php");
 
 // Include classes
-require_once("SdkConverter.AbstractClassReader.php");
-require_once("SdkConverter.Object.MethodReader.php");
-require_once("SdkConverter.Object.ClassReader.php");
-require_once("SdkConverter.Fields.ClassReader.php");
-require_once("SdkConverter.Converter.php");
+require_once(__DIR__."/SdkConverter/AbstractClassReader.php");
+require_once(__DIR__."/SdkConverter/Object/MethodReader.php");
+require_once(__DIR__."/SdkConverter/Object/ClassReader.php");
+require_once(__DIR__."/SdkConverter/Fields/ClassReader.php");
+require_once(__DIR__."/SdkConverter/Converter.php");
 
 /**
  * Gets standard input from the user
@@ -44,7 +44,13 @@ function stdin() {
  * @return void
  */
 function main() {
-    \FacebookAds\Api::init("", "", ""); // #dat hack
+
+    /** Initialize the facebook ads API #dat hack */
+    /** @noinspection PhpUndefinedNamespaceInspection */
+    /** @noinspection PhpUndefinedClassInspection */
+    \FacebookAds\Api::init("", "", "");
+
+    // Generate a new instance of the converter and compile all classes
     $converter = new \SdkConverter\Converter();
     $converter->compile();
 }

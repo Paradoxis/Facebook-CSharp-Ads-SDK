@@ -30,7 +30,7 @@ class ClassReader extends AbstractClassReader
      */
     public function getOutputLocation()
     {
-        return __DIR__.Converter::OUTPUT_DIR_FIELDS;
+        return __DIR__.'/../../'.Converter::OUTPUT_DIR_FIELDS;
     }
 
     /**
@@ -39,7 +39,7 @@ class ClassReader extends AbstractClassReader
      */
     public function getOutputFileLocation()
     {
-        return __DIR__.Converter::OUTPUT_DIR_FIELDS."{$this->getClassName()}.cs";
+        return __DIR__.'/../../'.Converter::OUTPUT_DIR_FIELDS."{$this->getClassName()}.cs";
     }
 
     /**
@@ -48,7 +48,7 @@ class ClassReader extends AbstractClassReader
      */
     public function getTemplateLocation()
     {
-        return __DIR__.'/SdkConverter.Fields.ClassTemplate.php';
+        return __DIR__.'/../Templates/FacebookAds.Object.Fields.php';
     }
 
     /**
