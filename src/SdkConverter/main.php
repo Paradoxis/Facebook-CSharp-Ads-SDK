@@ -3,6 +3,10 @@
 /**
  * PHP to C# Converter
  * Converts the entire Facebook Ads SDK to C# classes in our code
+ *
+ * This program is meant to be run via the CLI interface but should work fine with
+ * a web-server as it doesn't use the stdin() method (yet).
+ *
  * @author Luke Paris (Paradoxis) <luke@paradoxis.nl>
  * @copyright 2016 | Searchresult Performancemarketing
  */

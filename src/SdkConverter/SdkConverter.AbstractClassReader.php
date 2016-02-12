@@ -133,6 +133,7 @@ abstract class AbstractClassReader
         return get_called_class();
     }
 
+
     /**
      * Get the output directory path
      * @return string
