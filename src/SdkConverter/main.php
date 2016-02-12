@@ -9,7 +9,7 @@
 
 // Define our converter constant to prevent bugs
 define("__CONVERTER__", true);
-define("__DEBUG__", false);
+define("__DEBUG__", true);
 
 // Include Facebook autoloader and API class
 // Download these from the official Facebook Ads SDK page
@@ -18,9 +18,11 @@ require_once(__DIR__."/../../lib/FacebookAds/Api.php");
 require_once(__DIR__."/../../lib/FacebookAds/autoload.php");
 
 // Include classes
+require_once("SdkConverter.AbstractClassReader.php");
+require_once("SdkConverter.Object.MethodReader.php");
+require_once("SdkConverter.Object.ClassReader.php");
+require_once("SdkConverter.Fields.ClassReader.php");
 require_once("SdkConverter.Converter.php");
-require_once("SdkConverter.ClassReader.php");
-require_once("SdkConverter.MethodReader.php");
 
 /**
  * Gets standard input from the user

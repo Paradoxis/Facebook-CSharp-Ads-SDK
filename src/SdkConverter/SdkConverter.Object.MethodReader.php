@@ -4,7 +4,7 @@
  * Namespace
  * @copyright (c) 2014 - 2016 | Paradoxis
  */
-namespace SdkConverter;
+namespace SdkConverter\Object;
 
 /**
  * Use classes

@@ -9,54 +9,51 @@ namespace SdkConverter;
 /**
  * Use classes
  */
-use \InvalidArgumentException;
 use \ReflectionClass;
-use \stdClass;
 
 /**
- * Class ClassReader
+ * Class AbstractClassReader
  * @package SdkConverter
  * @author  Paradoxis <luke@paradoxis.nl>
  */
-class ClassReader {
-
+abstract class AbstractClassReader
+{
     /**
      * Class namespace passed by the Converter
      * @var string
      */
-    private $namespace;
+    protected $namespace;
 
     /**
      * Class name passed by the Converter
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * Filename of the class passed by the Converter
      * @var string
      */
-    private $file;
+    protected $file;
 
     /**
      * Path and filename of the class passed by the Converter
      * @var string
      */
-    private $path;
+    protected $path;
 
     /**
      * ReflectionClass instance which gives us information about our class
      * @var \ReflectionClass
      */
-    private $reflection;
-
+    protected $reflection;
 
     /**
      * Method blacklist
      * Mostly inherited methods etc
      * @var string[]
      */
-    private $methodBlacklist = [
+    protected $methodBlacklist = [
         "getEndpoint",
         "getFieldsEnum",
         "getFields",
@@ -78,21 +75,20 @@ class ClassReader {
         "getProductFromCatalogByRetailerId"
     ];
 
-
     /**
      * Constructor method
-     * @param stdClass $class
+     * @param string $namespace
+     * @param string $name
+     * @param string $file
+     * @param string $path
      */
-    public function __construct(stdClass $class) {
-
-        // Load the class details into their respected variables
-        foreach(['namespace', 'name', 'file', 'path'] as $field) {
-            if (isset($class->$field) && is_string($class->$field)) {
-                $this->$field = $class->$field;
-            } else {
-                throw new InvalidArgumentException("Invalid field '$field' supplied.");
-            }
-        }
+    public function __construct($namespace, $name, $file, $path)
+    {
+        // Load values into their variables
+        $this->namespace = $namespace;
+        $this->name = $name;
+        $this->file = $file;
+        $this->path = $path;
 
         // Include the file and store it in a reflection instance
         // Is this potentially dangerous with unknown PHP files?
@@ -105,7 +101,8 @@ class ClassReader {
      * Gets the class name assigned to the module
      * @return string
      */
-    public function getClassName() {
+    public function getClassName()
+    {
         return $this->name;
     }
 
@@ -113,7 +110,8 @@ class ClassReader {
      * Gets the filename of the class assigned to the module
      * @return string
      */
-    public function getFileName() {
+    public function getFileName()
+    {
         return $this->file;
     }
 
@@ -121,37 +119,38 @@ class ClassReader {
      * Gets the file path of the class assigned to the module
      * @return string
      */
-    public function getFilePath() {
+    public function getFilePath()
+    {
         return $this->path;
     }
 
+
     /**
-     * Gets the endpoint of the API call
+     * Get the name of the (sub)class
      * @return string
      */
-    public function getEndPoint() {
-        if ($this->reflection->hasMethod('getEndpoint')) {
-            $method = $this->reflection->getMethod('getEndpoint');
-            $method->setAccessible(true);
-            return $method->invoke(new $this->namespace);
-        } else {
-            return "";
-        }
+    public static function className() {
+        return get_called_class();
     }
 
     /**
-     * Get all methods as a MethodReader array
-     * @return \SdkConverter\MethodReader[]
+     * Get the output directory path
+     * @return string
+     * @abstract
      */
-    public function getMethods() {
-        $readers = [];
+    public abstract function getOutputLocation();
 
-        foreach($this->reflection->getMethods() as $method) {
-            if (substr($method->name, 0, 3) == "get" && in_array($method->name, $this->methodBlacklist) == false) {
-                $readers[] = new MethodReader($method);
-            }
-        }
+    /**
+     * Get the output file path
+     * @return string
+     * @abstract
+     */
+    public abstract function getOutputFileLocation();
 
-        return $readers;
-    }
+    /**
+     * Get the template file path
+     * @return string
+     * @abstract
+     */
+    public abstract function getTemplateLocation();
 }

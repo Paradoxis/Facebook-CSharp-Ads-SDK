@@ -9,7 +9,11 @@ namespace SdkConverter;
 /**
  * Use classes
  */
+use \Exception;
 use \stdClass;
+use \SdkConverter\AbstractClassReader as ClassReader;
+use \SdkConverter\Object\ClassReader as ObjectClassReader;
+use \SdkConverter\Fields\ClassReader as FieldsClassReader;
 
 /**
  * Class Converter
@@ -19,28 +23,31 @@ use \stdClass;
 class Converter
 {
     /**
-     * The class directory we want to read from
+     * The class directories we want to read from
      * @var string
      */
-    const INPUT_DIR = "/../../lib/FacebookAds/Object/";
+    const INPUT_DIR_OBJECT = "/../../lib/FacebookAds/Object/";
+    const INPUT_DIR_FIELDS = "/../../lib/FacebookAds/Object/Fields/";
 
     /**
-     * Output directory where we want our classes to go
+     * Output directories where we want our classes to go
      * @var string
      */
-    const OUTPUT_DIR = "/Output/";
+    const OUTPUT_DIR_OBJECT = "/Output/";
+    const OUTPUT_DIR_FIELDS = "/Output/Fields/";
 
     /**
-     * Class namespace
+     * Class namespaces
      * @var string
      */
-    const CLASS_NAMESPACE = "\\FacebookAds\\Object\\";
+    const CLASS_NAMESPACE_OBJECT = "\\FacebookAds\\Object\\";
+    const CLASS_NAMESPACE_FIELDS = "\\FacebookAds\\Object\\Fields\\";
 
     /**
      * Every available file in the directory
-     * @var stdClass[]
+     * @var \SdkConverter\AbstractClassReader[]
      */
-    public $files = [];
+    public $classes = [];
 
     /**
      * Blacklist of files we DON'T want to convert
@@ -48,6 +55,7 @@ class Converter
      * @var array
      */
     private $blacklist = [
+        "AbstractArchivableCrudObjectFields.php",
         "AbstractArchivableCrudObject.php",
         "AbstractAsyncJobObject.php",
         "AbstractCrudObject.php",
@@ -55,61 +63,120 @@ class Converter
         "CanRedownloadInterface.php"
     ];
 
-
     /**
      * Class constructor
      * Loads all files into the $file array
      */
-    public function __construct() {
-        $dir = __DIR__.self::INPUT_DIR;
+    public function __construct()
+    {
+        $this->loadClasses(__DIR__.self::INPUT_DIR_OBJECT, self::CLASS_NAMESPACE_OBJECT, ObjectClassReader::className());
+        $this->loadClasses(__DIR__.self::INPUT_DIR_FIELDS, self::CLASS_NAMESPACE_FIELDS, FieldsClassReader::className());
+    }
 
+    /**
+     * Loads classes by scanning a directory
+     * @param string $dir
+     * @param string $namespace
+     * @param string $class
+     * @throws Exception
+     */
+    private function loadClasses($dir, $namespace, $class)
+    {
+        // Check if directory exists
+        if (file_exists($dir) == false || is_dir($dir) == false) {
+            throw new Exception("Directory '$dir' not found or is not a valid directory!");
+        }
+
+        // Scan the directory and load the classes in
         foreach(scandir($dir) as $file) {
             if(
                 is_file($dir.$file) &&
                 in_array($file, $this->blacklist) == false
             ) {
-                $this->files[] = (object) [
-                    'namespace' => self::CLASS_NAMESPACE.explode(".", $file)[0],
-                    'name' => explode(".", $file)[0],
-                    'file' => $file,
-                    'path' => $dir.$file,
-                ];
 
+                // Generate a new instance of
+                $instance = new $class(
+                    $namespace.explode(".", $file)[0],
+                    explode(".", $file)[0],
+                    $file,
+                    $dir.$file
+                );
+
+                // Load instance into the classes array
+                if ($instance instanceof AbstractClassReader) {
+                    $this->classes[] = $instance;
+                } else {
+                    throw new Exception("Class $class must be an instance of SdkConverter\\AbstractClassReader!");
+                }
+
+                // Give debug information back
                 if (__DEBUG__) {
-                    echo $dir.$file . "\n";
+                    echo "Found class file: ".$dir.$file."\n";
                 }
             }
         }
     }
 
     /**
-     * Get an array with class readers to parse the SDK classes
-     * @return \SdkConverter\ClassReader[]
+     * Returns the amount of classes that have been loaded into the compiler
+     * @return int
      */
-    public function getClasses() {
-        $classes = [];
-
-        foreach($this->files as $file) {
-            $classes[] = new ClassReader($file);
-        }
-
-        return $classes;
+    public function getClassCount()
+    {
+        return count($this->classes);
     }
 
     /**
      * Compiles all PHP classes to their respected C# variant
      * @return void
      */
-    public function compile() {
-        foreach($this->getClasses() as $class) {
-            $output_location = __DIR__.self::OUTPUT_DIR."{$class->getClassName()}.cs";
+    public function compile()
+    {
+        // Display header information
+        $start = microtime(true);
+        echo "SdkConverter | Facebook Ads SDK to C# converter \n";
+        echo "Copyright (c) 2014 - " . date('Y') . " | Luke Paris (Paradoxis) \n";
+        echo "\n";
+        echo "Starting compiler at " . date('Y-m-d H:i:s') . "\n";
+        echo "---------------------------------------- \n";
 
-            ob_start();
-            include(__DIR__."/SdkConverter.ClassTemplate.php");
-            file_put_contents($output_location, ob_get_contents());
-            ob_end_clean();
-
-            echo "File saved to: {$output_location} \n";
+        // Compile each class
+        foreach($this->classes as $class) {
+            $this->compileFile($class);
         }
+
+        // Display duration
+        $duration = round(microtime(true) - $start, 4);
+        echo "---------------------------------------- \n";
+        echo "Compiler finished in $duration seconds and generated {$this->getClassCount()} classes.";
+    }
+
+    /**
+     * Compiles a single file using an Abstract Class Reader object
+     * Class variable used in the templates
+     * @param AbstractClassReader $class
+     * @return void
+     */
+    private function compileFile(AbstractClassReader $class)
+    {
+        // Start output buffering and include the template class
+        ob_start();
+        include($class->getTemplateLocation());
+
+        // Check if directory exists
+        if (file_exists($class->getOutputLocation())) {
+            if (is_dir($class->getOutputLocation()) == false) {
+                mkdir($class->getOutputLocation());
+            }
+        } else {
+            mkdir($class->getOutputLocation());
+        }
+
+        // Put output into the correct directory
+        file_put_contents($class->getOutputFileLocation(), ob_get_contents());
+        ob_end_clean();
+
+        // Display that the class has been created
+        echo "File saved to: {$class->getOutputFileLocation()} \n";
     }
 }
