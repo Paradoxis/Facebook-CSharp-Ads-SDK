@@ -4,7 +4,7 @@
  * Namespace
  * @copyright (c) 2014 - 2016 | Paradoxis
  */
-namespace SdkConverter\Fields;
+namespace SdkConverter\Values;
 
 /**
  * Check if the application has been initialized
@@ -19,7 +19,7 @@ use \SdkConverter\AbstractClassReader;
 
 /**
  * Class ClassReader
- * @package SdkConverter\Fields
+ * @package SdkConverter\Values
  * @author  Paradoxis <luke@paradoxis.nl>
  */
 class ClassReader extends AbstractClassReader
@@ -30,7 +30,7 @@ class ClassReader extends AbstractClassReader
      */
     public function getOutputLocation()
     {
-        return realpath(__DIR__.'/../..').Converter::OUTPUT_DIR_FIELDS;
+        return realpath(__DIR__.'/../..').Converter::OUTPUT_DIR_VALUES;
     }
 
     /**
@@ -39,7 +39,7 @@ class ClassReader extends AbstractClassReader
      */
     public function getOutputFileLocation()
     {
-        return realpath(__DIR__.'/../..').Converter::OUTPUT_DIR_FIELDS."{$this->getClassName()}.cs";
+        return realpath(__DIR__.'/../..').Converter::OUTPUT_DIR_VALUES."{$this->getClassName()}.cs";
     }
 
     /**
@@ -48,7 +48,7 @@ class ClassReader extends AbstractClassReader
      */
     public function getTemplateLocation()
     {
-        return __DIR__.'/../Templates/FacebookAds.Object.Fields.php';
+        return __DIR__.'/../Templates/FacebookAds.Object.Values.php';
     }
 
     /**

@@ -11,7 +11,7 @@
  * @copyright 2016 | Searchresult Performancemarketing
  */
 
-// Define our converter constant to prevent bugs
+// Define the converter constants as configuration
 define("__SDK_CONVERTER__", true);
 define("__DEBUG__", false);
 
@@ -26,6 +26,7 @@ require_once(__DIR__."/SdkConverter/AbstractClassReader.php");
 require_once(__DIR__."/SdkConverter/Object/MethodReader.php");
 require_once(__DIR__."/SdkConverter/Object/ClassReader.php");
 require_once(__DIR__."/SdkConverter/Fields/ClassReader.php");
+require_once(__DIR__."/SdkConverter/Values/ClassReader.php");
 require_once(__DIR__."/SdkConverter/Converter.php");
 
 /**

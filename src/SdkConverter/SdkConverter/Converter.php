@@ -19,6 +19,7 @@ use \stdClass;
 use \SdkConverter\AbstractClassReader as ClassReader;
 use \SdkConverter\Object\ClassReader as ObjectClassReader;
 use \SdkConverter\Fields\ClassReader as FieldsClassReader;
+use \SdkConverter\Values\ClassReader as ValuesClassReader;
 
 /**
  * Class Converter
@@ -33,6 +34,7 @@ class Converter
      */
     const INPUT_DIR_OBJECT = "/../../../lib/FacebookAds/Object/";
     const INPUT_DIR_FIELDS = "/../../../lib/FacebookAds/Object/Fields/";
+    const INPUT_DIR_VALUES = "/../../../lib/FacebookAds/Object/Values/";
 
     /**
      * Output directories where we want our classes to go
@@ -40,6 +42,7 @@ class Converter
      */
     const OUTPUT_DIR_OBJECT = "/Output/";
     const OUTPUT_DIR_FIELDS = "/Output/Fields/";
+    const OUTPUT_DIR_VALUES = "/Output/Values/";
 
     /**
      * Class namespaces
@@ -47,6 +50,7 @@ class Converter
      */
     const CLASS_NAMESPACE_OBJECT = "\\FacebookAds\\Object\\";
     const CLASS_NAMESPACE_FIELDS = "\\FacebookAds\\Object\\Fields\\";
+    const CLASS_NAMESPACE_VALUES = "\\FacebookAds\\Object\\Values\\";
 
     /**
      * Every available file in the directory
@@ -76,6 +80,7 @@ class Converter
     {
         $this->loadClasses(__DIR__.self::INPUT_DIR_OBJECT, self::CLASS_NAMESPACE_OBJECT, ObjectClassReader::className());
         $this->loadClasses(__DIR__.self::INPUT_DIR_FIELDS, self::CLASS_NAMESPACE_FIELDS, FieldsClassReader::className());
+        $this->loadClasses(__DIR__.self::INPUT_DIR_VALUES, self::CLASS_NAMESPACE_VALUES, ValuesClassReader::className());
     }
 
     /**
