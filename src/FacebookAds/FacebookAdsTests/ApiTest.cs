@@ -5,6 +5,8 @@ using Facebook;
 using FacebookAds;
 using FacebookAds.Object;
 using FacebookAdsTests.Properties;
+using System.Collections.Generic;
+using FacebookAds.Object.Fields;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -37,10 +39,10 @@ namespace FacebookAdsTests
     [TestClass]
     public class ApiTest
     {
-        
+
 
         
 
-        
+
     }
 }

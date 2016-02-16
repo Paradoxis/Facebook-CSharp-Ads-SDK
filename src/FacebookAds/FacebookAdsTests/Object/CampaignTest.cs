@@ -3,6 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Facebook;
 using FacebookAds.Object;
+using FacebookAds.Object.Fields;
+using FacebookAds;
+using System.Collections.Generic;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -43,7 +46,7 @@ namespace FacebookAdsTests.Object
         public CampaignTest()
         {
             // TODO: get campaign ID's dynamically here
-            this.id = "me";
+            this.id = "6036856717278";
         }
 
         /// <summary>
@@ -78,11 +81,20 @@ namespace FacebookAdsTests.Object
         [TestMethod]
         public void CampaignGetInsightsTest()
         {
-            Console.WriteLine("Initializing [FacebookAds.Object.Campaign]");
-            Campaign campaign = new Campaign(id);
+            var output = (new Campaign(id)).GetInsights(new string[] {
+                InsightsFields.IMPRESSIONS,
+                InsightsFields.UNIQUE_CLICKS,
+                InsightsFields.REACH
+            }, new Dictionary<string, object>() {
+                {
+                    "time_range", new Dictionary<string, string>() {
+                        {"since", "2016-02-09"},
+                        {"until", "2016-02-16"}
+                    }
+                }
+            });
 
-            Console.WriteLine("Calling [FacebookAds.Object.Campaign].GetInsights()");
-            Console.WriteLine("Result: {0}", campaign.GetInsights());
+            Console.WriteLine(output);
         }
 
         /// <summary>
@@ -99,3 +111,4 @@ namespace FacebookAdsTests.Object
         }
     }
 }
+;
