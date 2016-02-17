@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Specialized;
 
 using Facebook;
+using Newtonsoft.Json.Linq;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -182,7 +183,7 @@ namespace FacebookAds.Interfaces
         /// <returns></returns>
         protected object getManyByConnection(Type reference, string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return Client.Get(this.assureEndpoint(reference), this.assureData(fields, parameters));
+            return JObject.Parse(Client.Get(this.assureEndpoint(reference), this.assureData(fields, parameters)).ToString());
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace FacebookAds.Interfaces
         /// </returns>
         protected object getManyByConnection(string endpoint, string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return Client.Get(this.assureEndpoint(endpoint), this.assureData(fields, parameters));
+            return JObject.Parse(Client.Get(this.assureEndpoint(endpoint), this.assureData(fields, parameters)).ToString());
         }
 
         /// <summary>
@@ -208,7 +209,7 @@ namespace FacebookAds.Interfaces
         /// <returns>Result of Client.GetTaskAsync</returns>
         protected object getManyByConnectionAsync(Type reference, string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return Client.GetTaskAsync(this.assureEndpoint(reference), this.assureData(fields, parameters));
+            return JObject.Parse(Client.GetTaskAsync(this.assureEndpoint(reference), this.assureData(fields, parameters)).ToString());
         }
 
         /// <summary>
@@ -220,7 +221,7 @@ namespace FacebookAds.Interfaces
         /// <returns>Result of Client.GetTaskAsync</returns>
         protected object getManyByConnectionAsync(string endpoint, string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return Client.GetTaskAsync(this.assureEndpoint(endpoint), this.assureData(fields, parameters));
+            return JObject.Parse(Client.GetTaskAsync(this.assureEndpoint(endpoint), this.assureData(fields, parameters)).ToString());
         }
 
         /// <summary>

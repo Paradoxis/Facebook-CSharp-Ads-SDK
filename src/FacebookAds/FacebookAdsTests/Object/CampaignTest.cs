@@ -6,6 +6,8 @@ using FacebookAds.Object;
 using FacebookAds.Object.Fields;
 using FacebookAds;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 /// <summary>
 /// The MIT License (MIT)
@@ -94,7 +96,8 @@ namespace FacebookAdsTests.Object
                 }
             });
 
-            Console.WriteLine(output);
+
+            Debug.WriteLine(output);
         }
 
         /// <summary>
