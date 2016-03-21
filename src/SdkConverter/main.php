@@ -8,7 +8,7 @@
  * a web-server as it doesn't use the stdin() method (yet).
  *
  * @author Luke Paris (Paradoxis) <luke@paradoxis.nl>
- * @copyright 2016 | Searchresult Performancemarketing
+ * @copyright (c) 2016 | Searchresult Performancemarketing
  */
 
 // Define the converter constants as configuration

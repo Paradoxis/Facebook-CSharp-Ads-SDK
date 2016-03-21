@@ -2,7 +2,7 @@
 
 /**
  * Namespace
- * @copyright (c) 2014 - 2016 | Searchresult
+ * @copyright (c) 2016 | Searchresult Performancemarketing
  */
 namespace SdkConverter\Fields;
 
