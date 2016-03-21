@@ -2,7 +2,7 @@
 
 /**
  * Namespace
- * @copyright (c) 2014 - 2016 | Paradoxis
+ * @copyright (c) 2014 - 2016 | Searchresult
  */
 namespace SdkConverter;
 
@@ -145,7 +145,7 @@ class Converter
         // Display header information
         $start = microtime(true);
         echo "SdkConverter | Facebook Ads SDK to C# converter \n";
-        echo "Copyright (c) 2014 - " . date('Y') . " | Luke Paris (Paradoxis) \n";
+        echo "Copyright (c) " . date('Y') . " | Searchresult \n";
         echo "\n";
         echo "Starting compiler at " . date('Y-m-d H:i:s') . "\n";
         echo "---------------------------------------- \n";

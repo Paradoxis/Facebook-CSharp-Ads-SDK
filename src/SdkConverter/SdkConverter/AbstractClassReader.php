@@ -2,7 +2,7 @@
 
 /**
  * Namespace
- * @copyright (c) 2014 - 2016 | Paradoxis
+ * @copyright (c) 2014 - 2016 | Searchresult
  */
 namespace SdkConverter;
 
