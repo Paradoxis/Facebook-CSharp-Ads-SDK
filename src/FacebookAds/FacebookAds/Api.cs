@@ -81,7 +81,7 @@ namespace FacebookAds
         /// <param name="accessToken">The access token.</param>
         public static void Initialize(string appId, string appSecret, string accessToken)
         {
-            Api.client = new FacebookClient(accessToken);
+            Api.client = new FacebookClient();
             Api.client.AppId = appId;
             Api.client.AppSecret = appSecret;
             Api.client.AccessToken = accessToken;
