@@ -38,7 +38,7 @@ namespace FacebookAds
         /// <summary>
         /// The version of the graph API we're using
         /// </summary>
-        public const string VERSION = "v2.9";
+        public const string VERSION = "v2.11";
 
         /// <summary>
         /// The client
