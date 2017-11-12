@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,21 +42,32 @@ namespace FacebookAds.Object.Fields
 {
     public class CampaignFields : AbstractCrudObjectFields
     {
-        public const string ID = "id";
         public const string ACCOUNT_ID = "account_id";
-        public const string OBJECTIVE = "objective";
-        public const string NAME = "name";
-        public const string IS_COMPLETED = "is_completed";
-        public const string BUYING_TYPE = "buying_type";
-        public const string PROMOTED_OBJECT = "promoted_object";
-        public const string SPEND_CAP = "spend_cap";
         public const string ADLABELS = "adlabels";
+        public const string BOOSTED_OBJECT_ID = "boosted_object_id";
+        public const string BRAND_LIFT_STUDIES = "brand_lift_studies";
+        public const string BUDGET_REBALANCE_FLAG = "budget_rebalance_flag";
+        public const string BUYING_TYPE = "buying_type";
+        public const string CAN_CREATE_BRAND_LIFT_STUDY = "can_create_brand_lift_study";
+        public const string CAN_USE_SPEND_CAP = "can_use_spend_cap";
+        public const string CONFIGURED_STATUS = "configured_status";
         public const string CREATED_TIME = "created_time";
+        public const string EFFECTIVE_STATUS = "effective_status";
+        public const string ID = "id";
+        public const string KPI_CUSTOM_CONVERSION_ID = "kpi_custom_conversion_id";
+        public const string KPI_TYPE = "kpi_type";
+        public const string NAME = "name";
+        public const string OBJECTIVE = "objective";
+        public const string RECOMMENDATIONS = "recommendations";
+        public const string SOURCE_CAMPAIGN = "source_campaign";
+        public const string SOURCE_CAMPAIGN_ID = "source_campaign_id";
+        public const string SPEND_CAP = "spend_cap";
         public const string START_TIME = "start_time";
+        public const string STATUS = "status";
         public const string STOP_TIME = "stop_time";
         public const string UPDATED_TIME = "updated_time";
-        public const string CONFIGURED_STATUS = "configured_status";
-        public const string EFFECTIVE_STATUS = "effective_status";
+        public const string EXECUTION_OPTIONS = "execution_options";
+        public const string PROMOTED_OBJECT = "promoted_object";
         
     }
 }

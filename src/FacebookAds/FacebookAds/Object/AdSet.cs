@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:07</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -58,16 +58,16 @@ namespace FacebookAds.Object
         }
         
         /// <summary>
-        /// Gets the ads.
+        /// Gets the activities.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetAds(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetActivities(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(Ad), fields, parameters);
+            return this.getManyByConnection("activities", fields, parameters);
         }
-                
+
         /// <summary>
         /// Gets the ad creatives.
         /// </summary>
@@ -76,9 +76,53 @@ namespace FacebookAds.Object
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
         public object GetAdCreatives(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(AdCreative), fields, parameters);
+            return this.getManyByConnection("adcreatives", fields, parameters);
         }
-                
+
+        /// <summary>
+        /// Gets the ads.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetAds(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("ads", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the asynchronously ad requests.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetAsyncAdRequests(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnectionAsync("asyncadrequests", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the copies.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetCopies(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("copies", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the delivery estimate.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetDeliveryEstimate(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("delivery_estimate", fields, parameters);
+        }
+
         /// <summary>
         /// Gets the insights.
         /// </summary>
@@ -89,7 +133,7 @@ namespace FacebookAds.Object
         {
             return this.getManyByConnection("insights", fields, parameters);
         }
-                
+
         /// <summary>
         /// Gets the insights asynchronously.
         /// </summary>
@@ -98,9 +142,22 @@ namespace FacebookAds.Object
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
         public object GetInsightsAsync(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnectionAsync(typeof(AsyncJobInsights), fields, parameters);
+            return this.getManyByConnectionAsync("insights", fields, parameters);
         }
-                
+
+        /// <summary>
+        /// Gets the targeting sentence lines.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetTargetingSentenceLines(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("targetingsentencelines", fields, parameters);
+        }
+
+
+
     }
 }
 

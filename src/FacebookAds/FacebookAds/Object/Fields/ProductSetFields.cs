@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,9 +42,12 @@ namespace FacebookAds.Object.Fields
 {
     public class ProductSetFields : AbstractCrudObjectFields
     {
+        public const string AUTO_CREATION_URL = "auto_creation_url";
+        public const string FILTER = "filter";
         public const string ID = "id";
         public const string NAME = "name";
-        public const string FILTER = "filter";
+        public const string PRODUCT_CATALOG = "product_catalog";
+        public const string PRODUCT_COUNT = "product_count";
         
     }
 }

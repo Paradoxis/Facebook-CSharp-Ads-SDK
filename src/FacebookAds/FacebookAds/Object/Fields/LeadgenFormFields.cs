@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,17 +42,35 @@ namespace FacebookAds.Object.Fields
 {
     public class LeadgenFormFields : AbstractCrudObjectFields
     {
+        public const string ALLOW_ORGANIC_LEAD = "allow_organic_lead";
+        public const string BLOCK_DISPLAY_FOR_NON_TARGETED_VIEWER = "block_display_for_non_targeted_viewer";
+        public const string CONTEXT_CARD = "context_card";
         public const string CREATED_TIME = "created_time";
-        public const string CUSTOMIZED_TCPA_CONTENT = "cusomized_tcpa_content";
+        public const string CREATOR = "creator";
+        public const string CREATOR_ID = "creator_id";
+        public const string CUSOMIZED_TCPA_CONTENT = "cusomized_tcpa_content";
+        public const string EXPIRED_LEADS_COUNT = "expired_leads_count";
+        public const string EXTRA_DETAILS = "extra_details";
         public const string FOLLOW_UP_ACTION_TEXT = "follow_up_action_text";
         public const string FOLLOW_UP_ACTION_URL = "follow_up_action_url";
         public const string ID = "id";
+        public const string IS_CONTINUED_FLOW = "is_continued_flow";
         public const string LEADGEN_EXPORT_CSV_URL = "leadgen_export_csv_url";
-        public const string LEADS = "leads";
+        public const string LEADS_COUNT = "leads_count";
+        public const string LEGAL_CONTENT = "legal_content";
         public const string LOCALE = "locale";
+        public const string MESSENGER_WELCOME_MESSAGE = "messenger_welcome_message";
         public const string NAME = "name";
+        public const string ORGANIC_LEADS_COUNT = "organic_leads_count";
+        public const string PAGE = "page";
+        public const string PAGE_ID = "page_id";
         public const string PRIVACY_POLICY_URL = "privacy_policy_url";
+        public const string QUALIFIERS = "qualifiers";
+        public const string QUESTION_PAGE_CUSTOM_HEADLINE = "question_page_custom_headline";
+        public const string QUESTIONS = "questions";
+        public const string STATUS = "status";
         public const string TCPA_COMPLIANCE = "tcpa_compliance";
+        public const string THANK_YOU_PAGE = "thank_you_page";
         
     }
 }

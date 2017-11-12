@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -43,9 +43,10 @@ namespace FacebookAds.Object.Fields
     public class MinimumBudgetFields : AbstractCrudObjectFields
     {
         public const string CURRENCY = "currency";
-        public const string MIN_DAILY_BUDGET_IMP = "min_daily_budget_imp";
         public const string MIN_DAILY_BUDGET_HIGH_FREQ = "min_daily_budget_high_freq";
+        public const string MIN_DAILY_BUDGET_IMP = "min_daily_budget_imp";
         public const string MIN_DAILY_BUDGET_LOW_FREQ = "min_daily_budget_low_freq";
+        public const string MIN_DAILY_BUDGET_VIDEO_VIEWS = "min_daily_budget_video_views";
         
     }
 }

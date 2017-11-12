@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,10 +42,19 @@ namespace FacebookAds.Object.Fields
 {
     public class ProductCatalogFields : AbstractCrudObjectFields
     {
-        public const string ID = "id";
         public const string BUSINESS = "business";
-        public const string EXTERNAL_EVENT_SOURCES = "external_event_sources";
+        public const string DA_DISPLAY_SETTINGS = "da_display_settings";
+        public const string DEFAULT_IMAGE_URL = "default_image_url";
+        public const string FALLBACK_IMAGE_URL = "fallback_image_url";
+        public const string FEED_COUNT = "feed_count";
+        public const string FLIGHT_CATALOG_SETTINGS = "flight_catalog_settings";
+        public const string ID = "id";
+        public const string IMAGE_PADDING_LANDSCAPE = "image_padding_landscape";
+        public const string IMAGE_PADDING_SQUARE = "image_padding_square";
         public const string NAME = "name";
+        public const string PRODUCT_COUNT = "product_count";
+        public const string QUALIFIED_PRODUCT_COUNT = "qualified_product_count";
+        public const string VERTICAL = "vertical";
         
     }
 }

@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:07</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -58,27 +58,38 @@ namespace FacebookAds.Object
         }
         
         /// <summary>
-        /// Gets the ad accounts.
+        /// Gets the audiences.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetAdAccounts(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetAudiences(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("audiences", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the shared accounts.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetSharedAccounts(string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return this.getManyByConnection("shared_accounts", fields, parameters);
         }
-                
+
         /// <summary>
-        /// Gets the agencies.
+        /// Gets the shared agencies.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetAgencies(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetSharedAgencies(string[] fields = null, Dictionary<string, object> parameters = null)
         {
             return this.getManyByConnection("shared_agencies", fields, parameters);
         }
-                
+
         /// <summary>
         /// Gets the stats.
         /// </summary>
@@ -89,7 +100,9 @@ namespace FacebookAds.Object
         {
             return this.getManyByConnection("stats", fields, parameters);
         }
-                
+
+
+
     }
 }
 

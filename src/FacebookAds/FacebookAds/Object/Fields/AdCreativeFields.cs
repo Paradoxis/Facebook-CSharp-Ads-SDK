@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:07</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,40 +42,45 @@ namespace FacebookAds.Object.Fields
 {
     public class AdCreativeFields : AbstractCrudObjectFields
     {
+        public const string ACCOUNT_ID = "account_id";
         public const string ACTOR_ID = "actor_id";
-        public const string ACTOR_IMAGE_HASH = "actor_image_hash";
-        public const string ACTOR_NAME = "actor_name";
         public const string ADLABELS = "adlabels";
         public const string APPLINK_TREATMENT = "applink_treatment";
+        public const string ASSET_FEED_SPEC = "asset_feed_spec";
         public const string BODY = "body";
+        public const string BRANDED_CONTENT_SPONSOR_PAGE_ID = "branded_content_sponsor_page_id";
         public const string CALL_TO_ACTION_TYPE = "call_to_action_type";
-        public const string DYNAMIC_AD_VOICE = "dynamic_ad_voice";
-        public const string FOLLOW_REDIRECT = "follow_redirect";
+        public const string EFFECTIVE_INSTAGRAM_STORY_ID = "effective_instagram_story_id";
+        public const string EFFECTIVE_OBJECT_STORY_ID = "effective_object_story_id";
         public const string ID = "id";
-        public const string IMAGE_HASH = "image_hash";
-        public const string IMAGE_FILE = "image_file";
-        public const string IMAGE_URL = "image_url";
         public const string IMAGE_CROPS = "image_crops";
+        public const string IMAGE_HASH = "image_hash";
+        public const string IMAGE_URL = "image_url";
         public const string INSTAGRAM_ACTOR_ID = "instagram_actor_id";
         public const string INSTAGRAM_PERMALINK_URL = "instagram_permalink_url";
-        public const string LINK_DEEP_LINK_URL = "link_deep_link_url";
+        public const string INSTAGRAM_STORY_ID = "instagram_story_id";
+        public const string LINK_OG_ID = "link_og_id";
         public const string LINK_URL = "link_url";
         public const string NAME = "name";
         public const string OBJECT_ID = "object_id";
         public const string OBJECT_STORY_ID = "object_story_id";
         public const string OBJECT_STORY_SPEC = "object_story_spec";
-        public const string OBJECT_STORE_URL = "object_store_url";
         public const string OBJECT_TYPE = "object_type";
         public const string OBJECT_URL = "object_url";
-        public const string PLACE_PAGE_SET_ID = "place_page_set_id";
-        public const string PREVIEW_URL = "preview_url";
+        public const string PLATFORM_CUSTOMIZATIONS = "platform_customizations";
         public const string PRODUCT_SET_ID = "product_set_id";
-        public const string RUN_STATUS = "run_status";
+        public const string RECOMMENDER_SETTINGS = "recommender_settings";
+        public const string STATUS = "status";
         public const string TEMPLATE_URL = "template_url";
+        public const string TEMPLATE_URL_SPEC = "template_url_spec";
         public const string THUMBNAIL_URL = "thumbnail_url";
         public const string TITLE = "title";
         public const string URL_TAGS = "url_tags";
+        public const string USE_PAGE_ACTOR_OVERRIDE = "use_page_actor_override";
         public const string VIDEO_ID = "video_id";
+        public const string CALL_TO_ACTION = "call_to_action";
+        public const string DYNAMIC_AD_VOICE = "dynamic_ad_voice";
+        public const string IMAGE_FILE = "image_file";
         
     }
 }

@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,12 +42,24 @@ namespace FacebookAds.Object.Fields
 {
     public class CustomConversionFields : AbstractCrudObjectFields
     {
+        public const string ACCOUNT_ID = "account_id";
+        public const string AGGREGATION_RULE = "aggregation_rule";
+        public const string CREATION_TIME = "creation_time";
         public const string CUSTOM_EVENT_TYPE = "custom_event_type";
+        public const string DATA_SOURCES = "data_sources";
+        public const string DEFAULT_CONVERSION_VALUE = "default_conversion_value";
         public const string DESCRIPTION = "description";
+        public const string EVENT_SOURCE_TYPE = "event_source_type";
+        public const string FIRST_FIRED_TIME = "first_fired_time";
         public const string ID = "id";
+        public const string IS_ARCHIVED = "is_archived";
+        public const string LAST_FIRED_TIME = "last_fired_time";
         public const string NAME = "name";
-        public const string PIXEL_ID = "pixel_id";
-        public const string PIXEL_RULE = "pixel_rule";
+        public const string OFFLINE_CONVERSION_DATA_SET = "offline_conversion_data_set";
+        public const string PIXEL = "pixel";
+        public const string RETENTION_DAYS = "retention_days";
+        public const string RULE = "rule";
+        public const string EVENT_SOURCE_ID = "event_source_id";
         
     }
 }

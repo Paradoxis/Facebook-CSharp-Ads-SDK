@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,15 +42,22 @@ namespace FacebookAds.Object.Fields
 {
     public class ProductFeedFields : AbstractCrudObjectFields
     {
-        public const string ID = "id";
-        public const string FILE_NAME = "file_name";
-        public const string FORMAT = "format";
         public const string COUNTRY = "country";
-        public const string ENCODING = "encoding";
-        public const string NAME = "name";
+        public const string CREATED_TIME = "created_time";
+        public const string DEFAULT_CURRENCY = "default_currency";
+        public const string DELETION_ENABLED = "deletion_enabled";
         public const string DELIMITER = "delimiter";
-        public const string QUOTES = "quotes";
+        public const string ENCODING = "encoding";
+        public const string FILE_NAME = "file_name";
+        public const string ID = "id";
+        public const string LATEST_UPLOAD = "latest_upload";
+        public const string NAME = "name";
+        public const string PRODUCT_COUNT = "product_count";
+        public const string QUALIFIED_PRODUCT_COUNT = "qualified_product_count";
+        public const string QUOTED_FIELDS_MODE = "quoted_fields_mode";
         public const string SCHEDULE = "schedule";
+        public const string UPDATE_SCHEDULE = "update_schedule";
+        public const string RULES = "rules";
         
     }
 }

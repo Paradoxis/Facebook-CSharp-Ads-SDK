@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:08</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,12 +42,20 @@ namespace FacebookAds.Object.Fields
 {
     public class LeadFields : AbstractCrudObjectFields
     {
-        public const string ADGROUP_ID = "adgroup_id";
+        public const string AD_ID = "ad_id";
+        public const string AD_NAME = "ad_name";
+        public const string ADSET_ID = "adset_id";
+        public const string ADSET_NAME = "adset_name";
+        public const string CAMPAIGN_ID = "campaign_id";
+        public const string CAMPAIGN_NAME = "campaign_name";
         public const string CREATED_TIME = "created_time";
+        public const string CUSTOM_DISCLAIMER_RESPONSES = "custom_disclaimer_responses";
         public const string FIELD_DATA = "field_data";
         public const string FORM_ID = "form_id";
         public const string ID = "id";
+        public const string IS_ORGANIC = "is_organic";
         public const string POST = "post";
+        public const string RETAILER_ITEM_ID = "retailer_item_id";
         
     }
 }

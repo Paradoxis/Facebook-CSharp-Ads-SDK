@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:07</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -43,28 +43,35 @@ namespace FacebookAds.Object.Fields
     public class AdFields : AbstractCrudObjectFields
     {
         public const string ACCOUNT_ID = "account_id";
-        public const string BID_AMOUNT = "bid_amount";
+        public const string AD_REVIEW_FEEDBACK = "ad_review_feedback";
+        public const string ADLABELS = "adlabels";
+        public const string ADSET = "adset";
         public const string ADSET_ID = "adset_id";
+        public const string BID_AMOUNT = "bid_amount";
+        public const string BID_INFO = "bid_info";
+        public const string BID_TYPE = "bid_type";
+        public const string CAMPAIGN = "campaign";
         public const string CAMPAIGN_ID = "campaign_id";
+        public const string CONFIGURED_STATUS = "configured_status";
         public const string CONVERSION_SPECS = "conversion_specs";
         public const string CREATED_TIME = "created_time";
-        public const string AD_REVIEW_FEEDBACK = "ad_review_feedback";
+        public const string CREATIVE = "creative";
+        public const string EFFECTIVE_STATUS = "effective_status";
         public const string ID = "id";
+        public const string LAST_UPDATED_BY_APP_ID = "last_updated_by_app_id";
         public const string NAME = "name";
-        public const string RTB_FLAG = "rtb_flag";
-        public const string TARGETING = "targeting";
+        public const string RECOMMENDATIONS = "recommendations";
+        public const string SOURCE_AD = "source_ad";
+        public const string SOURCE_AD_ID = "source_ad_id";
+        public const string STATUS = "status";
         public const string TRACKING_SPECS = "tracking_specs";
         public const string UPDATED_TIME = "updated_time";
-        public const string VIEW_TAGS = "view_tags";
-        public const string CREATIVE = "creative";
-        public const string SOCIAL_PREFS = "social_prefs";
-        public const string FAILED_DELIVERY_CHECKS = "failed_delivery_checks";
-        public const string REDOWNLOAD = "redownload";
-        public const string ADLABELS = "adlabels";
-        public const string ENGAGEMENT_AUDIENCE = "engagement_audience";
+        public const string ADSET_SPEC = "adset_spec";
+        public const string DATE_FORMAT = "date_format";
+        public const string DISPLAY_SEQUENCE = "display_sequence";
         public const string EXECUTION_OPTIONS = "execution_options";
-        public const string CONFIGURED_STATUS = "configured_status";
-        public const string EFFECTIVE_STATUS = "effective_status";
+        public const string REDOWNLOAD = "redownload";
+        public const string FILENAME = "filename";
         
     }
 }

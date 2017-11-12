@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-16 10:04:15</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -46,11 +46,13 @@ namespace FacebookAds.Object.Values
         public const string CLICKS = "CLICKS";
         public const string IMPRESSIONS = "IMPRESSIONS";
         public const string LINK_CLICKS = "LINK_CLICKS";
-        public const string MULTI_PREMIUM = "MULTI_PREMIUM";
         public const string OFFER_CLAIMS = "OFFER_CLAIMS";
         public const string PAGE_LIKES = "PAGE_LIKES";
         public const string POST_ENGAGEMENT = "POST_ENGAGEMENT";
         public const string VIDEO_VIEWS = "VIDEO_VIEWS";
+        public const string MRC_VIDEO_VIEWS = "MRC_VIDEO_VIEWS";
+        public const string COMPLETED_VIDEO_VIEWS = "COMPLETED_VIDEO_VIEWS";
+        public const string VIDEO_VIEWS_15S = "VIDEO_VIEWS_15S";
         
     }
 }

@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:07</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -58,27 +58,104 @@ namespace FacebookAds.Object
         }
         
         /// <summary>
-        /// Gets the products.
+        /// Gets the agencies.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetProducts(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetAgencies(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(Product), fields, parameters);
+            return this.getManyByConnection("agencies", fields, parameters);
         }
-                
+
         /// <summary>
-        /// Gets the product sets.
+        /// Gets the check batch request status.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        public object GetProductSets(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object GetCheckBatchRequestStatus(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(ProductSet), fields, parameters);
+            return this.getManyByConnection("check_batch_request_status", fields, parameters);
         }
-                
+
+        /// <summary>
+        /// Gets the destinations.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetDestinations(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("destinations", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the external event sources.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetExternalEventSources(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("external_event_sources", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the flights.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetFlights(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("flights", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the home listings.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetHomeListings(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("home_listings", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the hotel rooms batch.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetHotelRoomsBatch(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("hotel_rooms_batch", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the hotels.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetHotels(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("hotels", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the pricing variables batch.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetPricingVariablesBatch(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("pricing_variables_batch", fields, parameters);
+        }
+
         /// <summary>
         /// Gets the product feeds.
         /// </summary>
@@ -87,16 +164,55 @@ namespace FacebookAds.Object
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
         public object GetProductFeeds(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.getManyByConnection(typeof(ProductFeed), fields, parameters);
+            return this.getManyByConnection("product_feeds", fields, parameters);
         }
-                
+
         /// <summary>
-        /// Gets the external event sources.
+        /// Gets the product groups.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-                
+        public object GetProductGroups(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("product_groups", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the product sets.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetProductSets(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("product_sets", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the product sets batch.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetProductSetsBatch(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("product_sets_batch", fields, parameters);
+        }
+
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
+        public object GetProducts(string[] fields = null, Dictionary<string, object> parameters = null)
+        {
+            return this.getManyByConnection("products", fields, parameters);
+        }
+
+
+
     }
 }
 

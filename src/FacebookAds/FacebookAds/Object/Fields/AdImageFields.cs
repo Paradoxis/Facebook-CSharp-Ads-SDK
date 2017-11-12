@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-12 11:11:07</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -42,21 +42,26 @@ namespace FacebookAds.Object.Fields
 {
     public class AdImageFields : AbstractCrudObjectFields
     {
-        public const string ID = "id";
-        public const string HASH = "hash";
-        public const string URL = "url";
-        public const string CREATIVES = "creatives";
-        public const string FILENAME = "filename";
-        public const string WIDTH = "width";
-        public const string HEIGHT = "height";
-        public const string ORIGINAL_WIDTH = "original_width";
-        public const string ORIGINAL_HEIGHT = "original_height";
-        public const string NAME = "name";
-        public const string STATUS = "status";
+        public const string ACCOUNT_ID = "account_id";
         public const string CREATED_TIME = "created_time";
-        public const string UPDATED_TIME = "updated_time";
+        public const string CREATIVES = "creatives";
+        public const string HASH = "hash";
+        public const string HEIGHT = "height";
+        public const string ID = "id";
+        public const string IS_ASSOCIATED_CREATIVES_IN_ADGROUPS = "is_associated_creatives_in_adgroups";
+        public const string NAME = "name";
+        public const string ORIGINAL_HEIGHT = "original_height";
+        public const string ORIGINAL_WIDTH = "original_width";
         public const string PERMALINK_URL = "permalink_url";
+        public const string STATUS = "status";
+        public const string UPDATED_TIME = "updated_time";
+        public const string URL = "url";
         public const string URL_128 = "url_128";
+        public const string WIDTH = "width";
+        public const string BYTES = "bytes";
+        public const string COPY_FROM = "copy_from";
+        public const string ZIPBYTES = "zipbytes";
+        public const string FILENAME = "filename";
         
     }
 }

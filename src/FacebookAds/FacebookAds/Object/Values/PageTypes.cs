@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) 2017 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ using FacebookAds.Interfaces;
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
 /// </summary>
-/// <date>2016-02-16 10:04:16</date>
+/// <date>2017-11-12 14:56:48</date>
 /// <author>Luke Paris (Paradoxis) | luke@paradoxis.nl</author>
 ///
 /// <remarks>
@@ -44,6 +44,7 @@ namespace FacebookAds.Object.Values
     {
         public const string DESKTOP_FEED = "desktopfeed";
         public const string HOME = "home";
+        public const string INSTAGRAM_STREAM = "instagramstream";
         public const string LEGACY_EXTERNAL = "legacyexternal";
         public const string LOGOUT = "logout";
         public const string MOBILE_EXTERNAL = "mobileexternal";
