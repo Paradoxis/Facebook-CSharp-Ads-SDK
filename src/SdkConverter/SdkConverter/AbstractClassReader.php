@@ -77,7 +77,9 @@ abstract class AbstractClassReader
         "getCreateIdFieldName",
         "getCompletitionPercentageFieldName",
         "getNormalizers",
-        "getProductFromCatalogByRetailerId"
+        "getProductFromCatalogByRetailerId",
+        "getReferencedEnums",
+        "getFieldTypes"
     ];
 
     /**

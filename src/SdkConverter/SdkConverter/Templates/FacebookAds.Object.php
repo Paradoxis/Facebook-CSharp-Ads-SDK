@@ -29,24 +29,19 @@ namespace FacebookAds.Object
         }
         <?php foreach($class->getMethods() as $method): ?>
 
+<?php if ($method->getMethodEndpoint() != null): ?>
         /// <summary>
         /// <?= $method->getDocumentation(); ?>.
         /// </summary>
         /// <param name="fields">The fields.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The result of <see cref="Facebook.FacebookClient"/>.Get()</returns>
-        <?php if ($method->getType() == \SdkConverter\Object\MethodReader::TYPE_DIRECT): ?>
-public object <?= $method->getMethodName(); ?>(string[] fields = null, Dictionary<string, object> parameters = null)
+        public object <?= $method->getMethodName(); ?>(string[] fields = null, Dictionary<string, object> parameters = null)
         {
-            return this.<?= $method->getConnectionMethod(); ?>("<?= $method->getApiEndPoint(); ?>", fields, parameters);
-        }
-        <?php endif; ?><?php if ($method->getType() == \SdkConverter\Object\MethodReader::TYPE_REFLECTION): ?>
-public object <?= $method->getMethodName(); ?>(string[] fields = null, Dictionary<string, object> parameters = null)
-        {
-            return this.<?= $method->getConnectionMethod(); ?>(typeof(<?= $method->getReflectionClassType(); ?>), fields, parameters);
-        }
-        <?php endif; ?>
-        <?php endforeach; ?>
+            return this.<?= $method->getConnectionMethod(); ?>("<?= $method->getMethodEndpoint(); ?>", fields, parameters);
+        }<?php endif; ?>
+
+<?php endforeach; ?>
 
     }
 }

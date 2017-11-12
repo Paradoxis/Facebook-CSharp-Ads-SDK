@@ -10,7 +10,7 @@ using FacebookAds.Interfaces;
 /// <summary>
 /// The MIT License (MIT)
 ///
-/// Copyright (c) 2016 - Luke Paris (Paradoxis) | Searchresult Performancemarketing
+/// Copyright (c) <?= date("Y"); ?> - Luke Paris (Paradoxis) | Searchresult Performancemarketing
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal

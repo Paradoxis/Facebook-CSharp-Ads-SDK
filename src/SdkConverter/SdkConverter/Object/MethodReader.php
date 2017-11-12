@@ -63,43 +63,24 @@ class MethodReader {
     }
 
     /**
-     * Gets the parameters of the method body
+     * Get the method endpoint
      * @return string[]
      */
-    private function getMethodParameters() {
-        $body = $this->getMethodBody();                // Fetch method body
-        $body = preg_replace("/\s\s+/", "", $body);    // Replaces all tabs and double spaces
-        preg_match("/return.*?\;/", $body, $body);     // Get the return statement
-        preg_match("/\(.*\)\;/", $body[0], $body);     // Get the method parameters
+    public function getMethodEndpoint() {
+        $body = $this->getMethodBody();                         // Fetch method body
+        $body = preg_replace("/\s\s+/", "", $body);             // Replaces all tabs and double spaces
+        preg_match("/ApiRequest\((.*)\)\);/", $body, $body);    // Get the method parameters
 
         // Check for methods that don't match the default pattern
         // which is used in the auto-generated methods
         if (count($body) < 1) {
             error_log("Method conflict at: {$this->method->name}() in class {$this->method->class} (add this to the blacklist in Converter.ClassReader)");
-            return [];
+            return null;
         }
 
-        // Remove the outer ( and );
-        //Split the arguments at the ", " (space optional)
-        $body = substr($body[0], 1, -2);
-        $parameters = preg_split("/[\,\s]+/", $body);
-
-        // Filter out quotes from strings in arguments
-        if (count($parameters) == 4) {
-            $parameters[3] = preg_replace("/[\'\"]+/", "", $parameters[3]);
-        }
-
-        // Return all parameters as an array! :D
-        return $parameters;
-    }
-
-    /**
-     * Check what kind of method call is being used
-     * @see constants
-     * @return int
-     */
-    public function getType() {
-        return count($this->getMethodParameters());
+        // Get the endpoint
+        $body = explode(",", $body[1]);
+        return ltrim(str_replace(["'", '"'], "", $body[3]), "/");
     }
 
     /**
@@ -155,33 +136,5 @@ class MethodReader {
      */
     public function getConnectionMethod() {
         return ($this->isAsync()) ? "getManyByConnectionAsync" : "getManyByConnection";
-    }
-
-    /**
-     * Gets the API endpoint as a string
-     * @return string|null
-     */
-    public function getApiEndPoint() {
-        $parameters = $this->getMethodParameters();
-
-        if (isset($parameters[3])) {
-            return $parameters[3];
-        } else {
-            return "";
-        }
-    }
-
-    /**
-     * Gets the API endpoint as a class used in reflection
-     * @return string|null
-     */
-    public function getReflectionClassType() {
-        $parameters = $this->getMethodParameters();
-
-        if (isset($parameters[0])) {
-            return explode("::", $parameters[0])[0];
-        } else {
-            return "";
-        }
     }
 }
