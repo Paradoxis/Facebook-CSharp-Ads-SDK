@@ -79,13 +79,13 @@ namespace FacebookAds
         /// <param name="appId">The application identifier.</param>
         /// <param name="appSecret">The application secret.</param>
         /// <param name="accessToken">The access token.</param>
-        public static void Initialize(string appId, string appSecret, string accessToken)
+        public static void Initialize(string appId, string appSecret, string accessToken, string apiVersion = null)
         {
             Api.client = new FacebookClient();
             Api.client.AppId = appId;
             Api.client.AppSecret = appSecret;
             Api.client.AccessToken = accessToken;
-            Api.client.Version = Api.VERSION;
+            Api.client.Version = apiVersion != null ? apiVersion : Api.VERSION;
         }
 
         /// <summary>
