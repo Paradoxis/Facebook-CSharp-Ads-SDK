@@ -1,5 +1,10 @@
-# Facebook Ads API SDK for C-sharp
+# Facebook Ads API SDK for C-Sharp 
 The Facebook C# Ads SDK is a library to facilitate application development for [Facebook Ads API](https://developers.facebook.com/docs/ads-api). This repository consists of two parts: a ready to use C# library, and a compiler that converts the official Facebook PHP SDK into C# classes. For more information about either of the two parts, please refer to the documentation down below.
+
+## Deprecated
+This library is no longer under development, for more information on exactly why, see [issue 6](https://github.com/Paradoxis/Facebook-CSharp-Ads-SDK/issues/6) *(TL;DR: I no longer write any projects in C#, I no longer work in anything marketing-related and I don't have a lot of free time I wish to spend on this project)*. 
+
+Feel free to fork this library at your heart's content, I however will **not** transfer ownership of the NuGet repository to anyone unless I know them personally as to prevent another [event-stream apocalypse](https://github.com/dominictarr/event-stream/issues/116) *(especially relevant for this library as it handles a lot of sensitive information)*.
 
 ## Installation
 To start using the library, install it using NuGet:
